@@ -21,7 +21,7 @@ public class AstronautaDB {
 		String host = "//xmysql.astronautdatabase.com:3306/";
 		String database = "astronautdatabase";
 		String user = "astronautdataba";
-		String pw = "Juliana11@";
+		String pw = "";
 		String url = driver + host + database; 
 		Connection connection = DriverManager.getConnection(url, user, pw);
 		return connection;
