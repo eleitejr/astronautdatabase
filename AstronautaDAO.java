@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -11,12 +12,13 @@ import java.util.List;
 
 import jdbc.AstronautaDB;
 import modelo.Astronauta;
+import modelo.Pais;
 
 
 public class AstronautaDAO {
 
 	private final Connection con;
-	
+
 	public AstronautaDAO(Connection con) {
 		this.con = con;
 	}
@@ -74,6 +76,7 @@ public class AstronautaDAO {
 	public List<Astronauta> lista() throws SQLException, NumberFormatException {
 		
 		int id;
+		
 		String 	nome, 
 				nome_m,
 				sobrenome,
@@ -84,9 +87,13 @@ public class AstronautaDAO {
 				foto,
 				info,
 				info_eng;
-		Date dataNasc, dataFalec;
+		
+		Date 	dataNasc, dataFalec;
+		
+		Blob	imagem = null;
 
 		List<Astronauta> astronautas = new ArrayList<>();
+		
 		String sql = "SELECT * FROM astronauta";
 
 		Connection con = AstronautaDB.getLocalConnection();
@@ -115,6 +122,8 @@ public class AstronautaDAO {
 					for (int m = 1; m <= 8; m++){
 						String mission = rs.getString("m" + (m));
 						missoes.add(mission);
+						
+					imagem = rs.getBlob("Imagem");
 					}
 
 					// falta inserir campos de foto e biografia
@@ -134,7 +143,8 @@ public class AstronautaDAO {
 								info_eng,	// String
 								dataNasc, 	// Date
 								dataFalec,  // Date
-								missoes 	// ArrayList<String>
+								missoes,	// ArrayList<String>
+								imagem		// Blob
 					);
 					
 					astronauta.setIdAstronauta(id);
@@ -145,13 +155,13 @@ public class AstronautaDAO {
 		return astronautas;
 	}
 	
-	public ArrayList<Astronauta> executaConsulta(Connection connection)
+	public ArrayList<Astronauta> pegaAstronautas(Connection connection)
 			throws SQLException {
 		ArrayList<Astronauta> astronautas = new ArrayList<>();
 		Statement statement = connection.createStatement();
 		@SuppressWarnings("unused")
 		boolean resultado = statement.execute
-		("SELECT * FROM astronauta ORDER BY Sobrenome");
+		("SELECT * FROM astronauta ORDER BY idAstronauta");
 			try (ResultSet resultSet = statement.getResultSet()) {
 				while (resultSet.next()){
 					int id = resultSet.getInt("idAstronauta");
@@ -163,7 +173,7 @@ public class AstronautaDAO {
 					String cidade = resultSet.getString("Cidade_Nasc");
 					String sexo = resultSet.getString("Sexo");
 					Date dataNasc = resultSet.getDate("DtNasc");
-					Date dataFalec = null;//resultSet.getDate("DtFalec");
+					Date dataFalec = resultSet.getDate("DtFalec");
 					String foto = resultSet.getString("Foto");
 					String info = resultSet.getString("Info");
 					String info_eng = resultSet.getString("Info_eng");
@@ -171,6 +181,8 @@ public class AstronautaDAO {
 					for (int i = 1; i<=8; i++) {
 						missao.add(resultSet.getString("m" + i));
 					}
+					Blob imagem = resultSet.getBlob("Imagem");
+					
 					Astronauta a = new Astronauta(
 							id, 
 							nome, 
@@ -185,7 +197,8 @@ public class AstronautaDAO {
 							info_eng, 
 							dataNasc, 
 							dataFalec, 
-							missao);
+							missao,
+							imagem);
 		
 					astronautas.add(a);
 			}
@@ -197,28 +210,34 @@ public class AstronautaDAO {
 			return astronautas;
 	}
 	
-	
-	
-	public void atualiza(Astronauta astronauta) throws SQLException {
+	public ArrayList<Pais> pegaPaises(Connection connection)
+			throws SQLException {
+		ArrayList<Pais> paises = new ArrayList<>();
+		Statement statement = connection.createStatement();
+		@SuppressWarnings("unused")
+		boolean resultado = statement.execute
+		("SELECT * FROM paises");
+			try (ResultSet resultSet = statement.getResultSet()) {
+				while (resultSet.next()){
+					String id = resultSet.getString("iso3");
+					String nome = resultSet.getString("nome");
+					
+					Pais pais = new Pais(id, nome);
 		
-		ArrayList<Astronauta> astronautas;	
-		
-		try (Connection connection = AstronautaDB.getLocalConnection()){
-			AstronautaDAO dao = new AstronautaDAO(connection);
-			astronautas = dao.executaConsulta(connection);
-
-		String sql = "UPDATE astronauta SET Imagem = LOAD_FILE('?') "
-				+ "WHERE Foto = ?";
-
-		try (PreparedStatement stmt = con.prepareStatement(sql)) {
-
-			stmt.setString(1, "imagens/people/" + astronauta.getFoto());
-			stmt.setString(2, astronauta.getFoto());
-			stmt.execute();
-
-		}
+					paises.add(pais);
+			}
+				resultSet.close();
+			} catch (Exception e) {
+				System.out.println("Erro de acesso ao Banco de Dados");
+				e.printStackTrace();
+				}
+			return paises;
 	}
 
+	public void adiciona(Astronauta astronauta) {
+		// TODO Auto-generated method stub
+		
 	}
+
 
 }
