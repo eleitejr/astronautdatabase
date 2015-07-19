@@ -1,8 +1,19 @@
 package modelo;
 
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.List;
 
+/**
+ * @author Erasmo Leite Jr
+ * @version 0.7
+ * 
+ * Date: 2015.07.11
+ * 
+ * class Astronauta - modelo 
+ * 
+ *
+ */
 public class Astronauta {
 	
 	private int 			idAstronauta;
@@ -23,6 +34,8 @@ public class Astronauta {
 	
 	private List<String> 	missao;
 	
+	private Blob			Imagem;
+	
 	// construtor
 	public Astronauta(
 			int idAstronauta, 
@@ -38,7 +51,8 @@ public class Astronauta {
 			String info_eng, 
 			Date dtNasc, 
 			Date dtFalec,
-			List<String> missao) {
+			List<String> missao,
+			Blob imagem) {
 		super();
 		this.idAstronauta = idAstronauta;
 		Primeiro_Nome = primeiro_Nome;
@@ -54,6 +68,11 @@ public class Astronauta {
 		DtNasc = dtNasc;
 		DtFalec = dtFalec;
 		this.missao = missao;
+		Imagem = imagem;
+	}
+
+	public Astronauta() {
+		// TODO Auto-generated constructor stub
 	}
 
 	// GETTERS e SETTERS
@@ -142,9 +161,17 @@ public class Astronauta {
 		this.missao = missao;
 	}
 	
+	public Blob getImagem() {
+		return Imagem;
+	}
+
+	public void setImagem(Blob imagem) {
+		Imagem = imagem;
+	}
+
 	@Override
 	public String toString() {
-		return this.getPrimeiro_Nome() + " " + this.getSobrenome();
+		return this.getSobrenome() + ", " + this.getPrimeiro_Nome();
 	}
 	
 }
