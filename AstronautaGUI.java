@@ -433,7 +433,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 					
 					default :					{strPais = "ALL"; break;}
 					}
-				atualizaLista();
+				//atualizaLista();
 
 				}
 			
@@ -454,7 +454,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 					case "Feminino" :	{strSexo = "F"; 	break;}
 					default:			{strSexo = "ALL"; 	break;}
 				}	
-				atualizaLista();
+				//atualizaLista();
 			}
 	   }
 	       
