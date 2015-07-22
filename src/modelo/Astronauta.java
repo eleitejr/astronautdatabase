@@ -18,12 +18,12 @@ public class Astronauta {
 	LocalDate data_Falec;
 	String foto;
 	String bio;
-	ArrayList<Missao> missao;
+	ArrayList<String> missao;
 
 	public Astronauta(String nome, String m_nome, String sobrenome,
-			String pais, String estado, String cidade, String sexo, LocalDate data_Nasc,
-			LocalDate data_Falec, String foto, String bio,
-			ArrayList<Missao> missao) {
+			String pais, String estado, String cidade, String sexo, String data_Nasc,
+			String data_Falec, String foto, String bio,
+			ArrayList<String> missao) {
 		super();
 		this.nome = nome;
 		this.m_nome = m_nome;
@@ -32,8 +32,11 @@ public class Astronauta {
 		this.estado = estado;
 		this.cidade = cidade;
 		this.sexo = sexo;
-		this.data_Nasc = data_Nasc;
-		this.data_Falec = data_Falec;
+
+		if (data_Nasc.isEmpty()) this.data_Nasc = LocalDate.parse("1900-01-01"); else this.data_Nasc = LocalDate.parse(data_Nasc);
+
+		if (data_Falec == null) this.data_Falec = LocalDate.parse("1900-01-01"); else this.data_Falec = LocalDate.parse(data_Falec);
+
 		this.foto = foto;
 		this.bio = bio;
 		this.missao = missao;
@@ -117,11 +120,22 @@ public class Astronauta {
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
-	public ArrayList<Missao> getMissao() {
+	public ArrayList<String> getMissao() {
 		return missao;
 	}
-	public void setMissao(ArrayList<Missao> missao) {
+	public void setMissao(ArrayList<String> missao) {
 		this.missao = missao;
+	}
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder(); 
+
+		sb.append(id + " " 
+				+ pais + " " + nome + " " + m_nome + " " + sobrenome);
+
+		return sb.toString(); 
 	}
 
 
