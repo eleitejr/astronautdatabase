@@ -1,142 +1,177 @@
 package modelo;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+import java.sql.Blob;
+import java.sql.Date;
+import java.util.List;
 
-
+/**
+ * @author Erasmo Leite Jr
+ * @version 0.7
+ * 
+ * Date: 2015.07.11
+ * 
+ * class Astronauta - modelo 
+ * 
+ *
+ */
 public class Astronauta {
-
-	int id;
-	String nome;
-	String m_nome;
-	String sobrenome;
-	String pais;
-	String estado;
-	String cidade;
-	String sexo;
-	LocalDate data_Nasc;
-	LocalDate data_Falec;
-	String foto;
-	String bio;
-	ArrayList<String> missao;
-
-	public Astronauta(String nome, String m_nome, String sobrenome,
-			String pais, String estado, String cidade, String sexo, String data_Nasc,
-			String data_Falec, String foto, String bio,
-			ArrayList<String> missao) {
+	
+	private int 			idAstronauta;
+	
+	private String 			Primeiro_Nome, 
+							Nome_do_Meio, 
+							Sobrenome,
+							Pais_Nasc,
+							Estado_Nasc,
+							Cidade_Nasc,
+							Foto,
+							Sexo,
+							Info,
+							Info_eng;
+	
+	private Date 			DtNasc,
+							DtFalec;
+	
+	private List<String> 	missao;
+	
+	private Blob			Imagem;
+	
+	// construtor
+	public Astronauta(
+			int idAstronauta, 
+			String primeiro_Nome,
+			String nome_do_Meio, 
+			String sobrenome, 
+			String pais_Nasc,
+			String estado_Nasc, 
+			String cidade_Nasc, 
+			String foto, 
+			String sexo,
+			String info, 
+			String info_eng, 
+			Date dtNasc, 
+			Date dtFalec,
+			List<String> missao,
+			Blob imagem) {
 		super();
-		this.nome = nome;
-		this.m_nome = m_nome;
-		this.sobrenome = sobrenome;
-		this.pais = pais;
-		this.estado = estado;
-		this.cidade = cidade;
-		this.sexo = sexo;
-
-		if (data_Nasc.isEmpty()) this.data_Nasc = LocalDate.parse("1900-01-01"); else this.data_Nasc = LocalDate.parse(data_Nasc);
-
-		if (data_Falec == null) this.data_Falec = LocalDate.parse("1900-01-01"); else this.data_Falec = LocalDate.parse(data_Falec);
-
-		this.foto = foto;
-		this.bio = bio;
+		this.idAstronauta = idAstronauta;
+		Primeiro_Nome = primeiro_Nome;
+		Nome_do_Meio = nome_do_Meio;
+		Sobrenome = sobrenome;
+		Pais_Nasc = pais_Nasc;
+		Estado_Nasc = estado_Nasc;
+		Cidade_Nasc = cidade_Nasc;
+		Foto = foto;
+		Sexo = sexo;
+		Info = info;
+		Info_eng = info_eng;
+		DtNasc = dtNasc;
+		DtFalec = dtFalec;
 		this.missao = missao;
+		Imagem = imagem;
 	}
 
-	public String getSexo() {
-		return sexo;
+	public Astronauta() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
+	// GETTERS e SETTERS
+	public int getIdAstronauta() {
+		return idAstronauta;
 	}
-
-	public String getEstado() {
-		return estado;
+	public void setIdAstronauta(int idAstronauta) {
+		this.idAstronauta = idAstronauta;
 	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public String getPrimeiro_Nome() {
+		return Primeiro_Nome;
 	}
-
-	public String getCidade() {
-		return cidade;
+	public void setPrimeiro_Nome(String primeiro_Nome) {
+		Primeiro_Nome = primeiro_Nome;
 	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public String getNome_do_Meio() {
+		return Nome_do_Meio;
 	}
-
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getM_nome() {
-		return m_nome;
-	}
-	public void setM_nome(String m_nome) {
-		this.m_nome = m_nome;
+	public void setNome_do_Meio(String nome_do_Meio) {
+		Nome_do_Meio = nome_do_Meio;
 	}
 	public String getSobrenome() {
-		return sobrenome;
+		return Sobrenome;
 	}
 	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+		Sobrenome = sobrenome;
 	}
-	public String getPais() {
-		return pais;
+	public String getPais_Nasc() {
+		return Pais_Nasc;
 	}
-	public void setPais(String pais) {
-		this.pais = pais;
+	public void setPais_Nasc(String pais_Nasc) {
+		Pais_Nasc = pais_Nasc;
 	}
-	public LocalDate getData_Nasc() {
-		return data_Nasc;
+	public String getEstado_Nasc() {
+		return Estado_Nasc;
 	}
-	public void setData_Nasc(LocalDate data_Nasc) {
-		this.data_Nasc = data_Nasc;
+	public void setEstado_Nasc(String estado_Nasc) {
+		Estado_Nasc = estado_Nasc;
 	}
-	public LocalDate getData_Falec() {
-		return data_Falec;
+	public String getCidade_Nasc() {
+		return Cidade_Nasc;
 	}
-	public void setData_Falec(LocalDate data_Falec) {
-		this.data_Falec = data_Falec;
+	public void setCidade_Nasc(String cidade_Nasc) {
+		Cidade_Nasc = cidade_Nasc;
 	}
 	public String getFoto() {
-		return foto;
+		return Foto;
 	}
 	public void setFoto(String foto) {
-		this.foto = foto;
+		Foto = foto;
 	}
-	public String getBio() {
-		return bio;
+	public String getSexo() {
+		return Sexo;
 	}
-	public void setBio(String bio) {
-		this.bio = bio;
+	public void setSexo(String sexo) {
+		Sexo = sexo;
 	}
-	public ArrayList<String> getMissao() {
+	public String getInfo() {
+		return Info;
+	}
+	public void setInfo(String info) {
+		Info = info;
+	}
+	public String getInfo_eng() {
+		return Info_eng;
+	}
+	public void setInfo_eng(String info_eng) {
+		Info_eng = info_eng;
+	}
+	public Date getDtNasc() {
+		return DtNasc;
+	}
+	public void setDtNasc(Date dtNasc) {
+		DtNasc = dtNasc;
+	}
+	public Date getDtFalec() {
+		return DtFalec;
+	}
+	public void setDtFalec(Date dtFalec) {
+		DtFalec = dtFalec;
+	}
+	public List<String> getMissao() {
 		return missao;
 	}
-	public void setMissao(ArrayList<String> missao) {
+	public void setMissao(List<String> missao) {
 		this.missao = missao;
+	}
+	
+	public Blob getImagem() {
+		return Imagem;
+	}
+
+	public void setImagem(Blob imagem) {
+		Imagem = imagem;
 	}
 
 	@Override
 	public String toString() {
-
-		StringBuilder sb = new StringBuilder(); 
-
-		sb.append(id + " " 
-				+ pais + " " + nome + " " + m_nome + " " + sobrenome);
-
-		return sb.toString(); 
+		return this.getSobrenome() + ", " + this.getPrimeiro_Nome();
 	}
-
-
+	
 }
