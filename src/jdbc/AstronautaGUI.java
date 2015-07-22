@@ -2,6 +2,7 @@ package jdbc;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -57,8 +58,10 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 	private static JTextArea taInfo; 					// areas de texto p/ info astronauta
 	private static JTextArea taInfoBio;
 	private static JLabel label; 						// label que contem a foto do astronauta
-
-	public static int 	larguraJanela = 200;			// o tamanho da janela da foto
+	
+	private File arqFonte = new File ("./fontes/Spaceport.ttf"); 
+	
+	public static int 	larguraJanela = 140;			// o tamanho da janela da foto
 	public static int 	alturaJanela = larguraJanela * 3/2;
 
 	private static String sArquivo[] = {
@@ -94,7 +97,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 	
 	private static String sPais[] = {
 										"Todos","ALL.png","T",
-		   								"Estados Unidos","USA.png","s",
+		   								"Estados Unidos","USA.png","E",
 		   								"Russia","RUS.png","R",
 		   								"China","CHN.png","C",
 		   								"Japão","JPN.png","J",
@@ -104,7 +107,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 		   								"Itália", "ITA.png","I",
 		   								"Brasil","BRA.png","B",
 		   								"Bélgica", "BEL.png", "L",
-		   								"Áustria", "AUT.png", "U",
+		   								"Áustria", "AUT.png", "u",
 		   								"Índia", "IND.png", "n",
 		   								"Rep. Checa","CZE.png","h"
 		   								}; 
@@ -154,36 +157,36 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 			      miAtualiza.addActionListener(mh);
 			      miAtualiza.setIcon(new ImageIcon("./imagens/vetor/database-sql.png"));
 			      
-		   JMenu menuSexo = new JMenu("Sexo");
-			      menuSexo.setIcon(new ImageIcon("./imagens/vetor/gender.png"));
-				      JRadioButtonMenuItem miAmbos = new JRadioButtonMenuItem("Ambos", true);
-				      miAmbos.setIcon(new ImageIcon("./imagens/vetor/toilet.png"));
-				      JRadioButtonMenuItem miMale = new JRadioButtonMenuItem("Masculino", false);
-				      miMale.setIcon(new ImageIcon("./imagens/vetor/toilet-male.png"));
-				      JRadioButtonMenuItem miFemale = new JRadioButtonMenuItem("Feminino", false);
-				      miFemale.setIcon(new ImageIcon("./imagens/vetor/toilet-female.png"));
-				      
-				      miAmbos.addItemListener(mrh);
-				      miMale.addItemListener(mrh);
-				      miFemale.addItemListener(mrh);
-				      ButtonGroup bg = new ButtonGroup();
-				      bg.add(miMale);bg.add(miFemale);bg.add(miAmbos);
-				      
-				      menuSexo.add(miMale);menuSexo.add(miFemale);menuSexo.add(miAmbos);
-				      
-				  JMenu menuPais = MenuBuilder.newMenuCheckBox("Pais", 'P', sPais, mcbh);
-				  menuPais.setIcon(new ImageIcon("./imagens/flags/_united-nations.png"));
-				      
-		      menuConsulta.add(menuPais);
-		      menuConsulta.add(menuSexo);
-		      menuConsulta.add(miMissao);
-		      menuConsulta.add(miDataNasc);
-		      menuConsulta.addSeparator();
-		      menuConsulta.add(miOrdena);
-		      menuConsulta.addSeparator();
-		      menuConsulta.add(miAtualiza);
-		      menuConsulta.setMnemonic('C');
-	      mb.add(menuConsulta);
+				   JMenu menuSexo = new JMenu("Sexo");
+					      menuSexo.setIcon(new ImageIcon("./imagens/vetor/gender.png"));
+						      JRadioButtonMenuItem miAmbos = new JRadioButtonMenuItem("Ambos", true);
+						      miAmbos.setIcon(new ImageIcon("./imagens/vetor/toilet.png"));
+						      JRadioButtonMenuItem miMale = new JRadioButtonMenuItem("Masculino", false);
+						      miMale.setIcon(new ImageIcon("./imagens/vetor/toilet-male.png"));
+						      JRadioButtonMenuItem miFemale = new JRadioButtonMenuItem("Feminino", false);
+						      miFemale.setIcon(new ImageIcon("./imagens/vetor/toilet-female.png"));
+						      
+						      miAmbos.addItemListener(mrh);
+						      miMale.addItemListener(mrh);
+						      miFemale.addItemListener(mrh);
+						      ButtonGroup bg = new ButtonGroup();
+						      bg.add(miMale);bg.add(miFemale);bg.add(miAmbos);
+						      
+						      menuSexo.add(miMale);menuSexo.add(miFemale);menuSexo.add(miAmbos);
+						      
+						  JMenu menuPais = MenuBuilder.newMenuCheckBox("Pais", 'P', sPais, mcbh);
+						  menuPais.setIcon(new ImageIcon("./imagens/flags/_united-nations.png"));
+						      
+				      menuConsulta.add(menuPais);
+				      menuConsulta.add(menuSexo);
+				      menuConsulta.add(miMissao);
+				      menuConsulta.add(miDataNasc);
+				      menuConsulta.addSeparator();
+				      menuConsulta.add(miOrdena);
+				      menuConsulta.addSeparator();
+				      menuConsulta.add(miAtualiza);
+				      menuConsulta.setMnemonic('C');
+			      mb.add(menuConsulta);
 	      
 	      mb.add(MenuBuilder.newMenu("Ajuda", 'u', sAjuda, mh));
 	      setJMenuBar(mb); //JMenu menu = mb.getMenu(1);
@@ -215,15 +218,30 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 		getContentPane().add(split4, "Center"); // adiciona a janela
 		
 		// outros ajustes
+		Font fonte;
+		try {
+			fonte = Font.createFont(Font.TRUETYPE_FONT, arqFonte);
+			fonte = fonte.deriveFont(Font.PLAIN, 14);
+			
+		} catch (FontFormatException | IOException e1) {
+			fonte = new Font("Verdana", Font.BOLD, 14);
+			//e1.printStackTrace();
+		}
 		split1.setDividerLocation(50); 
 		split2.setBorder(BorderFactory.createLoweredBevelBorder());
 		split2.setDividerLocation(larguraJanela);
 		split2.setOneTouchExpandable(true);
 		split3.setDividerLocation(alturaJanela);
 		taInfo.setEditable(false);
+		taInfo.setAutoscrolls(false);
 		taInfoBio.setEditable(false);
 		taInfo.setSelectionStart(0);
 		taInfoBio.setSelectionStart(0);
+		taInfo.setLineWrap(true);
+		taInfo.setWrapStyleWord(true);
+		taInfo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		taInfoBio.setLineWrap(true);
+		taInfoBio.setWrapStyleWord(true);
 		setSize(1200, 700); // dimensiona janela
 		listaAstro.addListSelectionListener(this);
 		listaAstro.setSelectedIndex(0); // elemento inicial da lista
@@ -341,14 +359,9 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 		for (String s : selecionado.getMissao()){
 			sb2.append(s + "\n");
 		}
-		taInfo.setText(sb.toString());
-		taInfo.setLineWrap(true);
-		taInfo.setWrapStyleWord(true);
-		taInfo.setFont(new Font("Serif", Font.BOLD, 20));
 		
+		taInfo.setText(sb.toString());
 		taInfoBio.setText(sb2.toString());
-		taInfoBio.setLineWrap(true);
-		taInfoBio.setWrapStyleWord(true);
 		
 		BufferedImage img = null;
 		try {
@@ -424,8 +437,10 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 			@Override
 			public void itemStateChanged(ItemEvent eventoSelecionaPais) {
 				
+				String paisSel = ((JMenuItem)eventoSelecionaPais.getSource()).getIcon().toString();
+				
 				// A expressão abaixo retorna o código ISO-3 do país, a partir do ícone armazenado no JMenuItem
-				strPais = ((JMenuItem)eventoSelecionaPais.getSource()).getIcon().toString().substring(16,19);
+				strPais = paisSel.substring(16,19);
 		
 				}
 				
@@ -461,54 +476,6 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 			criaListas();
 			criaPainel();
 		}
-	   
-
-		/**
-		 * REMOVER metodo desta classe
-		 * OBS: já foi incluido na classe ListaDeAstronautas
-		 */
-	   
-	   /*
-	   private void atualizaLista(ArrayList<Astronauta> listaDeAstronautas) {
-			DefaultListModel<Astronauta> modelAstroConsulta = new DefaultListModel<>();
-			
-			if (strSexo.equals("ALL") && (strPais.equals("ALL")))  {
-				for (Astronauta a : listaDeAstronautas) {
-					modelAstroConsulta.addElement(a);
-					};
-				
-			}
-			
-			else if (strSexo.equals("ALL") && (!strPais.equals("ALL"))) {
-				for (Astronauta a : listaDeAstronautas) {
-					if (a.getPais_Nasc().equals(strPais)){
-						modelAstroConsulta.addElement(a);
-					}
-				}
-			}
-			
-			else if (!strSexo.equals("ALL") && (strPais.equals("ALL"))) {
-				for (Astronauta a : listaDeAstronautas) {
-					if (a.getSexo().equals(strSexo)){
-						modelAstroConsulta.addElement(a);
-						}
-					}
-			}
-			
-			else if (!strSexo.equals("ALL") && (!strPais.equals("ALL"))) {
-				for (Astronauta a : listaDeAstronautas){
-					if (a.getPais_Nasc().equals(strPais) && (a.getSexo().equals(strSexo))){
-						modelAstroConsulta.addElement(a);
-					}
-				}
-			}
-			
-			listaAstro.setModel(modelAstroConsulta);
-			listaAstro.setSelectedIndex(0);
-			listaAstro.ensureIndexIsVisible(0);
-		}
-		
-		*/
 
 	public String mostraPais(String paisISO){
 		for (Pais p : paises){
