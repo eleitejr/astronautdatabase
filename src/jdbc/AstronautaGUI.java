@@ -339,7 +339,8 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 		String cidade = selecionado.getCidade_Nasc() + "\n";
 		String dataNasc = (sdf.format(selecionado.getDtNasc()) + "\n");
 		Date dataFalec = selecionado.getDtFalec();
-		String strDataFalec = dataFalec.toString();
+		String strDataFalec = "";
+		if (dataFalec != null) strDataFalec = dataFalec.toString();
 		
 		sb.append("NOME: \t" + nome	);
 		sb.append("PAIS: \t"  + pais );
