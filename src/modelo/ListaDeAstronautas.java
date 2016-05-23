@@ -1,102 +1,134 @@
 package modelo;
 
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.ListSelectionModel;
 
 @SuppressWarnings("serial")
 public class ListaDeAstronautas extends JList<Astronauta>{
-	
-	public void atualizaLista(ArrayList<Astronauta> listaDeAstronautas, String strSexo, String strPais){
-	
+
+	private DefaultListModel<Astronauta> modelAstro;
+
+	public ListaDeAstronautas(DefaultListModel<Astronauta> modelAstro) {
+		super();
+		this.modelAstro = modelAstro;
+	}
+
+	public ListaDeAstronautas(Collection<Astronauta> astronautas) {
+		inicializa(astronautas);
+	}
+
+	public DefaultListModel<Astronauta> getModelAstro() {
+		return modelAstro;
+	}
+
+	public void setModelAstro(DefaultListModel<Astronauta> modelAstro) {
+		this.modelAstro = modelAstro;
+	}
+
+	@Override
+	public String toString() {
+		//for (Astronauta a : astronautas)
+		return "[" + "] \n";
+	}
+
+	private void inicializa(Collection<Astronauta> astronautas){
+		modelAstro 	= new DefaultListModel<>();
+		for (Astronauta a : astronautas){
+			modelAstro.addElement(a);
+		}
+
+		setModel(modelAstro);
+		setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		setSelectedIndex(0);
+		ensureIndexIsVisible(0);
+
+	}
+
+	public void filtra(Collection<Astronauta> astros, String sexo, String pais, String grupo){
+
 		DefaultListModel<Astronauta> modelAstroConsulta = new DefaultListModel<>();
-		
-		switch(strPais){
-							case "ALL":	switch(strSexo){
-															case "ALL": {
-																for (Astronauta a : listaDeAstronautas) {
-																	modelAstroConsulta.addElement(a);
-																	};
-																break;
-																}
-															
-															default: {
-																for (Astronauta a : listaDeAstronautas) {
-															
-																if (a.getSexo().equals(strSexo)){
-																	modelAstroConsulta.addElement(a);
-																	}
-																}
-																break;
-															}
-															
-															
-										}
-							
-										break;
-							
-							default:	switch(strSexo){
-															case "ALL": {
-																for (Astronauta a : listaDeAstronautas) {
-																	if (a.getPais_Nasc().equals(strPais)){
-																		modelAstroConsulta.addElement(a);
-																	}
-																}
-																break;
-															}
-															
-															default: {
-																for (Astronauta a : listaDeAstronautas){
-																	if (a.getPais_Nasc().equals(strPais) && (a.getSexo().equals(strSexo))){
-																		modelAstroConsulta.addElement(a);
-																	}
-																}
-																break;
-															}
-										}
-										break;
-		}
-		
 		/*
-		
-		if (strSexo.equals("ALL") && (strPais.equals("ALL")))  {
-			for (Astronauta a : listaDeAstronautas) {
-				modelAstroConsulta.addElement(a);
-				}
-			
-		}
-		
-		else if (strSexo.equals("ALL") && (!strPais.equals("ALL"))) {
-			for (Astronauta a : listaDeAstronautas) {
-				if (a.getPais_Nasc().equals(strPais)){
-					modelAstroConsulta.addElement(a);
+		Set<Astronauta> sexoSet = new LinkedHashSet<Astronauta>();sexoSet.addAll(astros);
+		Set<Astronauta> paisSet = new LinkedHashSet<Astronauta>();paisSet.addAll(astros);
+		Set<Astronauta> grupoSet = new LinkedHashSet<Astronauta>();grupoSet.addAll(astros);
+
+		if (sexo != "ALL") {
+			for (Astronauta astronauta : sexoSet) {
+
+				if (!astronauta.getSexo().equals(sexo)){
+					sexoSet.remove(astronauta);
 				}
 			}
-		}
-		
-		else if (!strSexo.equals("ALL") && (strPais.equals("ALL"))) {
-			for (Astronauta a : listaDeAstronautas) {
-				if (a.getSexo().equals(strSexo)){
-					modelAstroConsulta.addElement(a);
+
+			if (pais != "ALL") {
+				for (Astronauta astronauta2 : paisSet) {
+
+				if (!astronauta2.getPais_Nasc().equals(pais)){
+					paisSet.remove(astronauta2);
 					}
 				}
-		}
-		
-		else if (!strSexo.equals("ALL") && (!strPais.equals("ALL"))) {
-			for (Astronauta a : listaDeAstronautas){
-				if (a.getPais_Nasc().equals(strPais) && (a.getSexo().equals(strSexo))){
-					modelAstroConsulta.addElement(a);
+			}
+
+			if (grupo != "ALL") {
+				if (!astronauta.getGrupo().equals(grupo)){
+					grupoSet.remove(astronauta);
 				}
 			}
 		}
-		
 		*/
-		
+		switch(pais){
+			case "ALL":	switch(sexo){
+				case "ALL": {
+					astros.forEach(modelAstroConsulta::addElement);
+					break;
+				}
+
+				default: {
+					astros.stream().filter(a -> a.getSexo().equals(sexo)).forEach(modelAstroConsulta::addElement);
+					break;
+				}
+
+
+			}
+				break;
+
+			default:	switch(sexo){
+				case "ALL": {
+					astros.stream().filter(a -> a.getPais_Nasc().equals(pais)).forEach(modelAstroConsulta::addElement);
+					break;
+				}
+
+				default: {
+					astros.stream().filter(a -> a.getPais_Nasc().equals(pais) && (a.getSexo().equals(sexo))).forEach(modelAstroConsulta::addElement);
+					break;
+				}
+			}
+				break;
+		}
+
 		setModel(modelAstroConsulta);
 		setSelectedIndex(0);
 		ensureIndexIsVisible(0);
-	
+
 	}
+
+	public void ordena(Collection<Astronauta> listaDeAstronautas, Comparator<Astronauta> c){
+
+		DefaultListModel<Astronauta> modelAstroOrdena = new DefaultListModel<>();
+
+		// TODO
+
+		listaDeAstronautas.forEach(modelAstroOrdena::addElement);
+
+		setModel(modelAstroOrdena);
+		setSelectedIndex(0);
+		ensureIndexIsVisible(0);
+
+	}
+
 
 }

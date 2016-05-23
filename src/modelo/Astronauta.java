@@ -1,57 +1,60 @@
 package modelo;
 
 import java.sql.Blob;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
  * @author Erasmo Leite Jr
  * @version 0.7
- * 
+ *
  * Date: 2015.07.11
- * 
+ *
  * class Astronauta - modelo 
- * 
+ *
  *
  */
 public class Astronauta {
-	
+
 	private int 			idAstronauta;
-	
-	private String 			Primeiro_Nome, 
-							Nome_do_Meio, 
-							Sobrenome,
-							Pais_Nasc,
-							Estado_Nasc,
-							Cidade_Nasc,
-							Foto,
-							Sexo,
-							Info,
-							Info_eng;
-	
-	private Date 			DtNasc,
-							DtFalec;
-	
+
+	private String 			Primeiro_Nome,
+			Nome_do_Meio,
+			Sobrenome,
+			Pais_Nasc,
+			Estado_Nasc,
+			Cidade_Nasc,
+			Foto,
+			Sexo,
+			Info,
+			Info_eng;
+
+	private LocalDate 			DtNasc,
+			DtFalec;
+
 	private List<String> 	missao;
-	
+
+	private int				N_missoes;
+
 	private Blob			Imagem;
-	
+
 	// construtor
 	public Astronauta(
-			int idAstronauta, 
+			int idAstronauta,
 			String primeiro_Nome,
-			String nome_do_Meio, 
-			String sobrenome, 
+			String nome_do_Meio,
+			String sobrenome,
 			String pais_Nasc,
-			String estado_Nasc, 
-			String cidade_Nasc, 
-			String foto, 
+			String estado_Nasc,
+			String cidade_Nasc,
+			String foto,
 			String sexo,
-			String info, 
-			String info_eng, 
-			Date dtNasc, 
-			Date dtFalec,
+			String info,
+			String info_eng,
+			LocalDate dtNasc,
+			LocalDate dtFalec,
 			List<String> missao,
+			int n_missoes,
 			Blob imagem) {
 		super();
 		this.idAstronauta = idAstronauta;
@@ -68,12 +71,48 @@ public class Astronauta {
 		DtNasc = dtNasc;
 		DtFalec = dtFalec;
 		this.missao = missao;
+		N_missoes = n_missoes;
 		Imagem = imagem;
+	}
+
+	// construtor sem idAstronauta
+	public Astronauta(
+			String primeiro_Nome,
+			String nome_do_Meio,
+			String sobrenome,
+			String pais_Nasc,
+			String estado_Nasc,
+			String cidade_Nasc,
+			String foto,
+			String sexo,
+			String info,
+			String info_eng,
+			LocalDate dtNasc,
+			LocalDate dtFalec,
+			List<String> missao,
+			int n_missoes) {
+		super();
+		Primeiro_Nome = primeiro_Nome;
+		Nome_do_Meio = nome_do_Meio;
+		Sobrenome = sobrenome;
+		Pais_Nasc = pais_Nasc;
+		Estado_Nasc = estado_Nasc;
+		Cidade_Nasc = cidade_Nasc;
+		Foto = foto;
+		Sexo = sexo;
+		Info = info;
+		Info_eng = info_eng;
+		DtNasc = dtNasc;
+		DtFalec = dtFalec;
+		this.missao = missao;
+		N_missoes = n_missoes;
+		Imagem = null;
 	}
 
 	public Astronauta() {
 		// TODO Auto-generated constructor stub
 	}
+
 
 	// GETTERS e SETTERS
 	public int getIdAstronauta() {
@@ -142,16 +181,16 @@ public class Astronauta {
 	public void setInfo_eng(String info_eng) {
 		Info_eng = info_eng;
 	}
-	public Date getDtNasc() {
+	public LocalDate getDtNasc() {
 		return DtNasc;
 	}
-	public void setDtNasc(Date dtNasc) {
+	public void setDtNasc(LocalDate dtNasc) {
 		DtNasc = dtNasc;
 	}
-	public Date getDtFalec() {
+	public LocalDate getDtFalec() {
 		return DtFalec;
 	}
-	public void setDtFalec(Date dtFalec) {
+	public void setDtFalec(LocalDate dtFalec) {
 		DtFalec = dtFalec;
 	}
 	public List<String> getMissao() {
@@ -160,7 +199,15 @@ public class Astronauta {
 	public void setMissao(List<String> missao) {
 		this.missao = missao;
 	}
-	
+
+	public int getN_missoes() {
+		return N_missoes;
+	}
+
+	public void setN_missoes(int n_missoes) {
+		N_missoes = n_missoes;
+	}
+
 	public Blob getImagem() {
 		return Imagem;
 	}
@@ -173,5 +220,5 @@ public class Astronauta {
 	public String toString() {
 		return this.getSobrenome() + ", " + this.getPrimeiro_Nome();
 	}
-	
+
 }
