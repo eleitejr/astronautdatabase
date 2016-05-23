@@ -1,0 +1,75 @@
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.xml	(revision )
++++ .idea/dataSources.xml	(revision )
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DataSourceManagerImpl" format="xml" hash="295280211">
++    <data-source source="LOCAL" name="MySQL - astronautdatabase@localhost" uuid="9298d9c7-d78b-4e43-9fcc-b4d87e6136ee">
++      <driver-ref>mysql</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
++      <jdbc-url>jdbc:mysql://localhost:3306/astronautdatabase</jdbc-url>
++      <driver-properties>
++        <property name="autoReconnect" value="true" />
++        <property name="zeroDateTimeBehavior" value="convertToNull" />
++        <property name="tinyInt1isBit" value="false" />
++        <property name="characterEncoding" value="utf8" />
++        <property name="characterSetResults" value="utf8" />
++        <property name="yearIsDateType" value="false" />
++      </driver-properties>
++    </data-source>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/jdbc/AstronautaDB.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/jdbc/AstronautaDB.java	(date 1462478720000)
++++ src/jdbc/AstronautaDB.java	(revision )
+@@ -9,13 +9,13 @@
+ 
+ 	public static Connection getRemoteConnection() throws SQLException {
+ 
+-		Connection connection = DriverManager.getConnection("jdbc:mysql://xmysql.astronautdatabase.com:3306/astronautdatabase", "astronautdataba", "Juliana11@");
++		Connection connection = DriverManager.getConnection("jdbc:mysql://xmysql.astronautdatabase.com:3306/astronautdatabase", "eleitejr", "Juliana11@");
+ 		return connection;
+ 	}
+ 	
+ 	public static Connection getLocalConnection() throws SQLException {
+ 
+-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/astronautdatabase", "root", "");
++		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/astronautdatabase", "root", "Juliana11@");
+ 		return connection;
+ 	}
+ 
+Index: .idea/sqldialects.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/sqldialects.xml	(revision )
++++ .idea/sqldialects.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="SqlDialectMappings">
++    <file url="PROJECT" dialect="MySQL" />
++  </component>
++</project>
+\ No newline at end of file
+Index: imagens/vetor/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- imagens/vetor/.gitignore	(revision )
++++ imagens/vetor/.gitignore	(revision )
+@@ -0,0 +1,1 @@
++/nasa_16.png
