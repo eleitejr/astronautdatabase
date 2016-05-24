@@ -1,0 +1,48 @@
+Manifest-Version: 1.0
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.sdk.samples; singleton:=true
+Require-Bundle: org.eclipse.ui,org.eclipse.pde.ui
+Bundle-Version: 4.4.0
+Bundle-ManifestVersion: 2
+
+Name: samples/swt/examples.zip
+SHA1-Digest: Jen3Aez5WPuqOeFzTz82BPuox5M=
+
+Name: samples/multipageeditor.zip
+SHA1-Digest: VZUKBSlO5Y0rCsXWOuf5pvKf4CM=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: 6mDW8kS/T9pK7w1by/wcxy21Z20=
+
+Name: samples/javaeditor.zip
+SHA1-Digest: F9wqu+uFYwy0bsE7cWYdkfX6/8s=
+
+Name: samples/swt/paint.zip
+SHA1-Digest: YM/nLcU1DjInBqNxp3aXArpDpcA=
+
+Name: plugin.properties
+SHA1-Digest: uBrO/G4V+y2L/juUyDBbJJSUKlI=
+
+Name: samples/swt/controls.zip
+SHA1-Digest: awnKwODoimhWi0DjbzlQCfGIk4A=
+
+Name: samples/swt/browser.zip
+SHA1-Digest: Qyfxw8UQa/yu73Vc7caurUyl2v0=
+
+Name: samples/propertysheet.zip
+SHA1-Digest: mBR0soL62/wjcd0uGJUh2EpPNvo=
+
+Name: samples/swt/layouts.zip
+SHA1-Digest: NJTD5+ddvsXyvzGPrCkj4BcFd3w=
+
+Name: samples/swt/launcher.zip
+SHA1-Digest: LD+U8728eiohb3I7h3spQfb/wYA=
+
+Name: plugin.xml
+SHA1-Digest: Fe7hkjHO927XZ40y3HOJwUWHoOE=
+
+Name: samples/readmetool.zip
+SHA1-Digest: iCqhENf8gqaYntTEZ+6KmB/l7OA=
+

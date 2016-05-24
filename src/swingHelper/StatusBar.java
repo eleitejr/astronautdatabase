@@ -8,7 +8,12 @@ import java.awt.Dimension;
  */
 public class StatusBar extends JLabel {
 
-    /** Cria uma nova instância de StatusBar */
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1977250976905757204L;
+
+	/** Cria uma nova instância de StatusBar */
     public StatusBar() {
         super();
         super.setPreferredSize(new Dimension(100, 16));

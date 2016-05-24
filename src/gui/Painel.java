@@ -4,7 +4,12 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 class Painel extends JPanel{
-    public void paintComponent( Graphics g ){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7165499200796773892L;
+
+	public void paintComponent( Graphics g ){
         super.paintComponent( g );
         int pixel=0;
 

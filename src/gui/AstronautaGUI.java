@@ -46,7 +46,8 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
     private ListaDePaises					listaDePaises;								// caixa de lista p/ escolha pais
     private JTextArea 						taInfo; 									// areas de texto p/ info astronauta
     private JTextArea 						taInfoBio;
-    private JTextArea					    taInfoConnection;							// propriedades da conexão
+    @SuppressWarnings("unused")
+	private JTextArea					    taInfoConnection;							// propriedades da conexão
     private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
 
     private final File arqFonte = new File ("./fontes/Spaceport.ttf");
