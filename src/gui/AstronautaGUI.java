@@ -32,6 +32,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -46,8 +47,7 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
     private ListaDePaises					listaDePaises;								// caixa de lista p/ escolha pais
     private JTextArea 						taInfo; 									// areas de texto p/ info astronauta
     private JTextArea 						taInfoBio;
-    @SuppressWarnings("unused")
-	private JTextArea					    taInfoConnection;							// propriedades da conexão
+    private JTextArea					    taInfoConnection;							// propriedades da conexão
     private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
 
     private final File arqFonte = new File ("./fontes/Spaceport.ttf");
@@ -274,6 +274,11 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         mb.add(MenuBuilder.newMenu("Editar", 'E', sEditar, mh));
         mb.add(MenuBuilder.newMenu("Banco de Dados", 'B', sBanco, mh));
 
+        /*****************************************************************************************
+         ITENS DO MENU FILTRAR
+         Seleciona astronauta com base em filtros: nome, país, missão, data de nascimento.
+         ******************************************************************************************/
+
         JMenu menuFiltrar = new JMenu("Filtrar");
         JMenuItem miMissao = new JMenuItem("Missão");
         miMissao.setIcon(new ImageIcon("./imagens/vetor/Space-Shuttle-icon.png"));
@@ -288,6 +293,11 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         JMenuItem miAtualiza = new JMenuItem("Atualiza");
         miAtualiza.addActionListener(mh);
         miAtualiza.setIcon(new ImageIcon("./imagens/vetor/arrow-circle.png"));
+
+        /*****************************************************************************************
+         ITENS DO MENU FILTRAR (sexo)
+         Seleciona astronauta com base em filtros: sexo masculino (M), feminino (F) ou ambos (ALL)
+         ******************************************************************************************/
 
         JMenu menuSexo = new JMenu("Sexo");
         menuSexo.setIcon(new ImageIcon("./imagens/vetor/gender.png"));
@@ -365,7 +375,6 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         getContentPane().add(split5, "Center"); // adiciona a janela
 
 
-
         // outros ajustes
         Font fonte;
         try {
@@ -382,6 +391,11 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         split2.setOneTouchExpandable(true);
         split3.setDividerLocation(alturaJanela);
         split5.setDividerLocation(1000);
+
+        /*****************************************************************************************
+         PAINÉIS COM INFORMAÇÕES SOBRE O VIAJANTE
+         Apresenta as informações do astronauta selecionado.
+         ******************************************************************************************/
         taInfo.setEditable(false);
         taInfo.setAutoscrolls(true);
         taInfoBio.setAutoscrolls(true);
@@ -423,7 +437,12 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         }
     }
 
+    /*****************************************************************************************
+                            IMPORTAÇÃO DO BANCO DE DADOS MySQL
 
+     Cria um  objeto de acesso a banco de dados (DAO) para carregar as listas de países e
+     astronautas.
+     ******************************************************************************************/
     /**
      *
      * @method importaBD
@@ -481,7 +500,7 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         // SimpleDateFormat sdf = new SimpleDateFormat("dd MMMMM yyyy");
 
         /* formatador de data */
-        DateTimeFormatter dateTimeFormatter3 = DateTimeFormatter.ofPattern("dd/MMM/YYYY");
+        DateTimeFormatter dateTimeFormatter3 = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
 
         Astronauta selecionado;
 
