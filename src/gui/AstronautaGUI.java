@@ -359,7 +359,6 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 lbl_foto = new JLabel(), // janela com a Foto do astronauta
                 new JScrollPane(taInfo = new JTextArea())); // area de texto
 
-
         JSplitPane split3 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
                 split2,
                 new JScrollPane(taInfoBio = new JTextArea())); // area de texto
@@ -567,7 +566,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
             File entrada = new File("./imagens/people/" + selecionado.getFoto());
             imagem = ImageIO.read(entrada);
 
-        } catch (IOException ignored) {
+        } catch (IOException exc) {
             mostraMsgIOException();
         }
 
