@@ -14,6 +14,7 @@ import modelo.ListaDeAstronautas;
 import modelo.ListaDePaises;
 import modelo.Pais;
 import swingHelper.StatusBar;
+import utility.FormatadorDeImagem;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -24,7 +25,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -38,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("serial")
-class AstronautaGUI extends JFrame implements ListSelectionListener {
+public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
     private Connection 						con;
     private static ArrayList<Astronauta> 	astronautas;
@@ -512,9 +512,9 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         }
 
         /*****************************************************************************************
-            ÁREA DE TEXTO COM INFO DO ASTRONAUTA
-            Exibe informacoes do astronauta: ID, nome, pa�s de origem, data de nascimento, sexo.
-        ******************************************************************************************/
+         ÁREA DE TEXTO COM INFO DO ASTRONAUTA
+         Exibe informacoes do astronauta: ID, nome, pa�s de origem, data de nascimento, sexo.
+         ******************************************************************************************/
 
         StringBuilder sb = new StringBuilder("REGISTRO: \t" + selecionado.getIdAstronauta() + "\n");
         String nome = selecionado.getPrimeiro_Nome() + " "
@@ -545,7 +545,7 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
 
         StringBuilder sb2 = new StringBuilder("BIOGRAFIA: " + "\n\n" + selecionado.getInfo() + "\n\n");
         sb2.append("MISSOES: " + "\n\n");
-        for (String s : selecionado.getMissao()){
+        for (String s : selecionado.getMissao()) {
             sb2.append(s).append("\n");
         }
 
@@ -557,19 +557,47 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         atualizaStatusBar(statusBar);
         getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH); // adiciona barra de status
 
-        BufferedImage img = null;
+        /***************************************************
+         *            PREPARAÇÃO DAS IMAGENS
+         ***************************************************/
+
+        BufferedImage imagem = null;
+
         try {
-            img = ImageIO.read(new File("./imagens/people/" + selecionado.getFoto()));
+            File entrada = new File("./imagens/people/" + selecionado.getFoto());
+            imagem = ImageIO.read(entrada);
 
-        } catch (IOException ignored){}
-
-        BufferedImage imagem = formataImagem(img);
+        } catch (IOException ignored) {
+            mostraMsgIOException();
+        }
 
         lbl_foto.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         lbl_foto.setSize(larguraJanela, alturaJanela);
         lbl_foto.setIcon(new ImageIcon(imagem));
+
+
     }
 
+    /*****************************************
+     * Método antigo (usar se der pau!!!)
+     *****************************************/
+
+   /*
+        BufferedImage img = null, imagem = null;
+
+            try {
+                File entrada = new File("./imagens/people/" + astronauta.getFoto());
+                img = ImageIO.read(entrada);
+
+                imagem = FormatadorDeImagem.formataImagem(img, larguraJanela, alturaJanela);
+
+            } catch (IOException ignored) { }
+
+            lbl_foto.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            lbl_foto.setSize(larguraJanela, alturaJanela);
+            lbl_foto.setIcon(new ImageIcon(imagem));
+        }
+*/
     /***************************************
           ATUALIZAÇÃO DA BARRA DE STATUS
      ***************************************/
@@ -582,24 +610,10 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
         String servidor = ConProperties;
         int n_registros = getListaDeAstronautas().getModel().getSize();
 
-        return "SERVIDOR: \t" + servidor + "  REGISTROS: \t" + n_registros + " registros encontrados." +
+        return "SERVIDOR: \t" + servidor + "  REGISTROS: \t" + n_registros + " encontrados." +
                 "  FILTROS: \t" + "[pais = " + getStrPais() + "] [sexo = " + getStrSexo() + "] [grupo = " + getStrGrupo() + "]" +
                 "  ORDEM: \t" + Ordem.substring(1);
 
-    }
-
-    /******************************************************
-            TRATAMENTO DA IMAGEM DO VIAJANTE ESPACIAL
-     ******************************************************/
-
-    // recebe uma imagem e retorna essa imagem no padrão LARGURA = larguraJanela, ALTURA = alturaJanela
-    private BufferedImage formataImagem(BufferedImage bi) throws HeadlessException {
-
-        BufferedImage aux = new BufferedImage(AstronautaGUI.larguraJanela, AstronautaGUI.alturaJanela, bi.getType());
-        Graphics2D gg = aux.createGraphics();
-        AffineTransform at = AffineTransform.getScaleInstance((double) AstronautaGUI.larguraJanela /bi.getWidth(), (double) AstronautaGUI.alturaJanela /bi.getHeight());
-        gg.drawRenderedImage(bi, at);
-        return aux;
     }
 
     /*****************
@@ -924,6 +938,24 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /***************************************************
+     *           MÉTODO PARA FORMATAR IMAGEM
+     ***************************************************/
+    private void trataImagem(Astronauta astronauta) {
+        BufferedImage imagem = null;
+        try {
+            File entrada = new File("./imagens/people/" + astronauta.getFoto());
+            BufferedImage img = ImageIO.read(entrada);
+
+            imagem = FormatadorDeImagem.formataImagem(img, larguraJanela, alturaJanela);
+
+            ImageIO.write(imagem, "jpg", entrada);
+
+        } catch (IOException ignored) {
+        }
+        ;
+    }
+
+    /***************************************************
      *           INICIALIZAÇÃO DOS COMPONENTES
      ***************************************************/
     private void inicializa() throws HeadlessException, SQLException {
@@ -948,6 +980,18 @@ class AstronautaGUI extends JFrame implements ListSelectionListener {
 
     }
 
+
+    /**
+     * @throws HeadlessException
+     */
+    public void mostraMsgIOException() throws HeadlessException {
+        JOptionPane.showMessageDialog(
+                AstronautaGUI.this,
+                "Alerta! Erro de I/O !",
+                "Alerta",
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon("./imagens/vetor/scary.png"));
+    }
 
     private void mostraFiltros() {
         System.out.println("Filtro [PAIS = " + getStrPais() + "][SEXO = " + getStrSexo() + "][GRUPO = " + getStrGrupo() + "] -------> "
