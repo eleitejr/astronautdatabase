@@ -8,16 +8,16 @@ import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 
 @SuppressWarnings("serial")
-public class ListaDeAstronautas extends JList<Astronauta>{
+public class JListaDeAstronautas extends JList<Astronauta>{
 
 	private DefaultListModel<Astronauta> modelAstro;
 
-	public ListaDeAstronautas(DefaultListModel<Astronauta> modelAstro) {
+	public JListaDeAstronautas(DefaultListModel<Astronauta> modelAstro) {
 		super();
 		this.modelAstro = modelAstro;
 	}
 
-	public ListaDeAstronautas(Collection<Astronauta> astronautas) {
+	public JListaDeAstronautas(Collection<Astronauta> astronautas) {
 		inicializa(astronautas);
 	}
 

@@ -32,7 +32,7 @@ public class FormatadorDeImagem {
 
 
     /***************************************************
-     *  PREPARAÇÃO DAS IMAGENS (usar diretório 'imagens')
+     *  PREPARACAO DAS IMAGENS (usar diretorio 'imagens')
      ***************************************************/
     public static void preparaImagens(ArrayList<Astronauta> astronautas) {
         BufferedImage imagem = null;
@@ -44,10 +44,15 @@ public class FormatadorDeImagem {
                 imagem = FormatadorDeImagem.formataImagem(ImageIO.read(entrada), 140, 210);
 
                 ImageIO.write(imagem, "jpg", entrada);
+                
+                System.out.println("Formatando imagem " + entrada.toString());
 
             } catch (IOException ignored) {
             }
         }
+
+        System.out.println();
+        System.out.println(astronautas.size() + " imagens formatadas no padrao 140px X 210px.");
     }
 
 

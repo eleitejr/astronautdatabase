@@ -42,7 +42,7 @@ public class BarraDeProgresso extends JPanel {
                     }
                 });
                 Thread.sleep(100);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
     }
