@@ -10,7 +10,7 @@ import crud.AstronautaCreate;
 import dao.AstronautaDAO;
 import dao.ConnectionFactory;
 import modelo.Astronauta;
-import modelo.ListaDeAstronautas;
+import modelo.JListaDeAstronautas;
 import modelo.ListaDePaises;
 import modelo.Pais;
 import swingHelper.StatusBar;
@@ -43,11 +43,11 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     private Connection 						con;
     private static ArrayList<Astronauta> 	astronautas;
     private static ArrayList<Pais> 			paises;
-    private ListaDeAstronautas 				listaDeAstronautas; 						// caixa de lista p/ escolha nome
+    private JListaDeAstronautas 			jlistaDeAstronautas; 						// caixa de lista p/ escolha nome
     private ListaDePaises					listaDePaises;								// caixa de lista p/ escolha pais
     private JTextArea 						taInfo; 									// areas de texto p/ info astronauta
     private JTextArea 						taInfoBio;
-    private JTextArea					    taInfoConnection;							// propriedades da conexão
+    private JTextArea					    taInfoConnection;							// propriedades da conexÃ£o
     private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
 
     private final File arqFonte = new File ("./fontes/Spaceport.ttf");
@@ -79,49 +79,51 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
             "Nuvem","database-cloud.png","v",
             "Rede","database-network.png","R",
             null, null, null,
-            "Estatísticas","database-property.png","s",
+            "EstatÃ­sticas","database-property.png","s",
             null, null, null,
             "Editar registro", "database--pencil.png", "d",
             "Inserir registro","database-insert.png","I",
-            "Remover registro", "database-delete.png","e"};
+            "Remover registro", "database-delete.png","e",
+            null, null, null,
+            "Preparar Imagens", "space-rocket48.png","I"};
 
     private static final String[] sPais = {
             "Todos","ALL.png","T",
-            "Afeganistão","AFG.png","a",
-            "África do Sul","ZAF.png","f",
+            "AfeganistÃ£o","AFG.png","a",
+            "Ã�frica do Sul","ZAF.png","f",
             "Alemanha","DEU.png","A",
-            "Arábia Saudita","SAU.png","t",
-            "Áustria","AUT.png","u",
-            "Bélgica","BEL.png", "L",
+            "ArÃ¡bia Saudita","SAU.png","t",
+            "Ã�ustria","AUT.png","u",
+            "BÃ©lgica","BEL.png", "L",
             "Brasil","BRA.png","B",
-            "Bulgária","BGR.png","i",
-            "Canadá","CAN.png","d",
-            "Casaquistão","KAZ.png","z",
+            "BulgÃ¡ria","BGR.png","i",
+            "CanadÃ¡","CAN.png","d",
+            "CasaquistÃ£o","KAZ.png","z",
             "China","CHN.png","C",
-            "Coréia do Sul","KOR.png","K",
+            "CorÃ©ia do Sul","KOR.png","K",
             "Cuba","CUB.png","b",
-            "Eslováquia","SVK.png","q",
+            "EslovÃ¡quia","SVK.png","q",
             "Estados Unidos","USA.png","E",
-            "França","FRA.png","F",
+            "FranÃ§a","FRA.png","F",
             "Holanda","NLD.png","l",
             "Hungria","HUN.png","H",
-            "Índia","IND.png", "n",
+            "Ã�ndia","IND.png", "n",
             "Israel","ISR.png","r",
-            "Itália","ITA.png","I",
-            "Japão","JPN.png","J",
-            "Malásia","MYS.png","M",
-            "México","MEX.png","x",
-            "Mongólia","MNG.png","g",
-            "Polônia","POL.png","P",
+            "ItÃ¡lia","ITA.png","I",
+            "JapÃ£o","JPN.png","J",
+            "MalÃ¡sia","MYS.png","M",
+            "MÃ©xico","MEX.png","x",
+            "MongÃ³lia","MNG.png","g",
+            "PolÃ´nia","POL.png","P",
             "Rep. Checa","CZE.png","h",
             "Reino Unido","GBR.png","U",
-            "Romênia","ROU.png","o",
+            "RomÃªnia","ROU.png","o",
             "Russia","RUS.png","R",
-            "Síria","SYR.png","y",
-            "Suécia","SWE.png","S",
-            "Suiça","CHE.png","ç",
-            "Ucrânia","UKR.png","k",
-            "Vietnã","VNM.png","V",
+            "SÃ­ria","SYR.png","y",
+            "SuÃ©cia","SWE.png","S",
+            "SuiÃ§a","CHE.png","Ã§",
+            "UcrÃ¢nia","UKR.png","k",
+            "VietnÃ£","VNM.png","V",
     };
 
     private static final String[] sGrupo = {
@@ -136,9 +138,9 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
             " Ordem de Viagem","Space-Shuttle-icon.png","V",
             " Sobrenome","address-book.png","n",
             " Data de Nascimento","calendar-day.png","D",
-            " Número de Missões","counter.png", "M",
+            " NÃºmero de MissÃµes","counter.png", "M",
             " Cidade de Nascimento","building-hedge.png","C",
-            " Tempo no Espaço","alarm-clock.png","ç",
+            " Tempo no EspaÃ§o","alarm-clock.png","Ã§",
             null,null,null,
             " Inverter Ordem","arrow-return-090.png","I"
     };
@@ -182,12 +184,12 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         AstronautaGUI.paises = paises;
     }
 
-    private ListaDeAstronautas getListaDeAstronautas() {
-        return listaDeAstronautas;
+    private JListaDeAstronautas getListaDeAstronautas() {
+        return jlistaDeAstronautas;
     }
 
-    public void setListaDeAstronautas(ListaDeAstronautas listaDeAstronautas) {
-        this.listaDeAstronautas = listaDeAstronautas;
+    public void setListaDeAstronautas(JListaDeAstronautas listaDeAstronautas) {
+        this.jlistaDeAstronautas = listaDeAstronautas;
     }
 
     public ListaDePaises getListaDePaises() {
@@ -246,9 +248,10 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         Ordem = ordem;
     }
 
-    /*
-     *  Construtor
-     */
+    /***********************************
+     *  Construtor da Interface Grafica
+     ***********************************/
+    
     private AstronautaGUI() throws SQLException, IOException {
         super("Viajantes Espaciais - The Astronaut & Cosmonaut Database"); // ajusta titulo
         setIconImage(new ImageIcon("./imagens/vetor/astronaut-icon.png").getImage());
@@ -259,7 +262,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /**
-     * CRIAÇÃO DOS MENUS
+     * CRIACAO DOS MENUS
      */
     private void criaMenu() {
 
@@ -276,11 +279,11 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
         /*****************************************************************************************
          ITENS DO MENU FILTRAR
-         Seleciona astronauta com base em filtros: nome, país, missão, data de nascimento.
+         Seleciona astronauta com base em filtros: nome, pais, missao, data de nascimento.
          ******************************************************************************************/
 
         JMenu menuFiltrar = new JMenu("Filtrar");
-        JMenuItem miMissao = new JMenuItem("Missão");
+        JMenuItem miMissao = new JMenuItem("MissÃ£o");
         miMissao.setIcon(new ImageIcon("./imagens/vetor/Space-Shuttle-icon.png"));
         miMissao.addActionListener(mh);
         JMenuItem miDataNasc = new JMenuItem("Data de Nascimento");
@@ -288,7 +291,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         JMenuItem miNome = new JMenuItem("Parte do Nome");
         miNome.setIcon(new ImageIcon("./imagens/vetor/document-attribute.png"));
         miNome.addActionListener(mh);
-        JMenuItem miOrdena = new JMenuItem("Ordena seleção por...");
+        JMenuItem miOrdena = new JMenuItem("Ordena seleÃ§Ã£o por...");
         miOrdena.setIcon(new ImageIcon("./imagens/vetor/sort-alphabet.png"));
         JMenuItem miAtualiza = new JMenuItem("Atualiza");
         miAtualiza.addActionListener(mh);
@@ -324,7 +327,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         JMenu menuGrupo = MenuBuilder.newRadioButtonMenu("Grupo", 'G', sGrupo, mth);
         menuGrupo.setIcon(new ImageIcon(MenuBuilder.imagePrefix + "block.png"));
 
-        JMenu menuOrdenar = MenuBuilder.newMenu("Ordenar seleção por...", 'O', sOrdenar, mh);
+        JMenu menuOrdenar = MenuBuilder.newMenu("Ordenar seleÃ§Ã£o por...", 'O', sOrdenar, mh);
         menuOrdenar.setIcon(new ImageIcon(MenuBuilder.imagePrefix + "sort-alphabet.png"));
 
         menuFiltrar.add(menuPais);
@@ -346,14 +349,14 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /**
-     * Cria painéis de divisão
+     * Cria paineis de divisao
      * @throws SQLException
      */
     private void criaPainel() throws SQLException {
         // painel de divisao
         JSplitPane split1 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
                 new JLabel(new ImageIcon("imagens/vetor/logoAstroDB.png")), // imagem
-                new JScrollPane(listaDeAstronautas)); // diretorio
+                new JScrollPane(jlistaDeAstronautas)); // diretorio
 
         JSplitPane split2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,// painel de divisao interno
                 lbl_foto = new JLabel(), // janela com a Foto do astronauta
@@ -369,7 +372,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
         JSplitPane split5 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
                 split4,
-                new JScrollPane(taInfoConnection = new JTextArea())); // area de info sobre conexão
+                new JScrollPane(taInfoConnection = new JTextArea())); // area de info sobre conexÃ£o
 
         getContentPane().add(split5, "Center"); // adiciona a janela
 
@@ -392,8 +395,8 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         split5.setDividerLocation(1000);
 
         /*****************************************************************************************
-         PAINÉIS COM INFORMAÇÕES SOBRE O VIAJANTE
-         Apresenta as informações do astronauta selecionado.
+         PAINEIS COM INFORMACOES SOBRE O VIAJANTE
+         Apresenta as informacoes do astronauta selecionado.
          ******************************************************************************************/
         taInfo.setEditable(false);
         taInfo.setAutoscrolls(true);
@@ -410,8 +413,8 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
         setSize(1200, 720); // dimensiona janela
 
-        listaDeAstronautas.addListSelectionListener(this);
-        listaDeAstronautas.setSelectedIndex(0); // elemento inicial da lista
+        jlistaDeAstronautas.addListSelectionListener(this);
+        jlistaDeAstronautas.setSelectedIndex(0); // elemento inicial da lista
         //pack();
     }
     /**
@@ -437,10 +440,11 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /*****************************************************************************************
-                            IMPORTAÇÃO DO BANCO DE DADOS MySQL
+                            IMPORTACAO DO BANCO DE DADOS MySQL
 
-     Cria um  objeto de acesso a banco de dados (DAO) para carregar as listas de países e
+     Cria um  objeto de acesso a banco de dados (DAO) para carregar as listas de paises e
      astronautas.
+     
      ******************************************************************************************/
     /**
      *
@@ -449,8 +453,8 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
      *
      * Cria os ArrayLists:
      *
-     * 1) astronautas 	- coleção de todos os astronautas recuperada do banco de dados MySql
-     * 2) paises 		- coleção de todos os paises recuperada do banco de dados MySql
+     * 1) astronautas 	- colecao de todos os astronautas recuperada do banco de dados MySql
+     * 2) paises 		- colecao de todos os paises recuperada do banco de dados MySql
      *
      */
     private void importaBD(Connection connection)
@@ -465,12 +469,12 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
     /**
      *
-     * Cria listas de astronautas e países
+     * Cria listas de astronautas e paises
      */
     private void criaListas() {
         // CRIA LISTA DE ASTRONAUTAS E CARREGA NO JLIST
 
-        listaDeAstronautas = new ListaDeAstronautas(getAstronautas());
+        jlistaDeAstronautas = new JListaDeAstronautas(getAstronautas());
 
         // System.out.println("Registros: " + getListaDeAstronautas().getModelAstro().getSize());
 
@@ -489,14 +493,17 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         System.out.println("LISTA ASTRONAUTAS");
         System.out.println("Pais = " + getStrPais());
         System.out.println("Sexo = " + getStrSexo());
-        System.out.println(listaDeAstronautas);
+        System.out.println(jlistaDeAstronautas);
     }
 
-    // classe implementa listener
+    /********************************************
+    
+    		classe implementa LISTENER
+    
+    *********************************************/
+    
     @Override
     public void valueChanged(ListSelectionEvent e) {
-
-        // SimpleDateFormat sdf = new SimpleDateFormat("dd MMMMM yyyy");
 
         /* formatador de data */
         DateTimeFormatter dateTimeFormatter3 = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
@@ -511,8 +518,8 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         }
 
         /*****************************************************************************************
-         ÁREA DE TEXTO COM INFO DO ASTRONAUTA
-         Exibe informacoes do astronauta: ID, nome, pa�s de origem, data de nascimento, sexo.
+         AREA DE TEXTO COM INFO DO ASTRONAUTA
+         Exibe informacoes do astronauta: ID, nome, pais de origem, data de nascimento, sexo.
          ******************************************************************************************/
 
         StringBuilder sb = new StringBuilder("REGISTRO: \t" + selecionado.getIdAstronauta() + "\n");
@@ -533,10 +540,12 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         sb.append("CIDADE: \t").append(cidade);
         sb.append("NASCEU: \t").append(textDataNasc).append("\n");
 
-        if (dataFalec.isBefore(LocalDate.now())) {
-            // caso a data de falecimento recuperada esteja no futuro
-            // indica que o astronauta não faleceu --> não imprime
-            // data de falecimento.
+        
+        // caso a data de falecimento recuperada esteja no futuro
+        // indica que o astronauta continua vivo --> nao imprime
+        // data de falecimento.
+        
+        if (dataFalec.isBefore(LocalDate.now())) {         
             sb.append("FALECEU: \t").append(textDataFalec).append("\n");
         }
 
@@ -557,9 +566,9 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH); // adiciona barra de status
 
         /***************************************************
-         *            PREPARAÇÃO DAS IMAGENS
+         *            PREPARACAO DAS IMAGENS
          ***************************************************/
-
+        
         BufferedImage imagem = null;
 
         try {
@@ -572,13 +581,14 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
         lbl_foto.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         lbl_foto.setSize(larguraJanela, alturaJanela);
+        assert imagem != null;
         lbl_foto.setIcon(new ImageIcon(imagem));
 
 
     }
 
     /*****************************************
-     * Método antigo (usar se der pau!!!)
+     * MÃ©todo antigo (usar se der pau!!!)
      *****************************************/
 
    /*
@@ -598,7 +608,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         }
 */
     /***************************************
-          ATUALIZAÇÃO DA BARRA DE STATUS
+          ATUALIZACAO DA BARRA DE STATUS
      ***************************************/
     private void atualizaStatusBar(StatusBar sbar) {
         sbar.setMessage(getStatus());
@@ -662,7 +672,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 mostraMsgOperNaoImplementada();
             }
 
-            // Banco de Dados - Estatísticas
+            // Banco de Dados - EstatÃ­sticas
             if (acao.equals(sBanco[5*3])){
                 //TODO: implementar
                 mostraMsgOperNaoImplementada();
@@ -688,7 +698,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                     dao.salva(astronauta);
                 }	catch (SQLException evt){
                     JOptionPane.showMessageDialog(null,
-                            "Não foi possível estabelecer conexão remota...",
+                            "NÃ£o foi possÃ­vel estabelecer conexÃ£o remota...",
                             "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon("./imagens/vetor/scary.png") );
                 }
 
@@ -705,11 +715,11 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
             /*******************************************************************
              *                          FILTROS
              ******************************************************************/
-            // Filtro = missão
-            if (acao.equals("Missão")) {
+            // Filtro = missao
+            if (acao.equals("MissÃ£o")) {
                 String mission = ((String) JOptionPane.showInputDialog(
                         AstronautaGUI.this,
-                        "Digite o nome da missão:",
+                        "Digite o nome da missÃ£o:",
                         "Filtrar Resultados",
                         JFrame.EXIT_ON_CLOSE,
                         new ImageIcon("./imagens/vetor/space-rocket48.png"),
@@ -729,9 +739,9 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                     }
                 }
 
-                listaDeAstronautas.setModel(modelAstroConsulta);
-                listaDeAstronautas.setSelectedIndex(0);
-                listaDeAstronautas.ensureIndexIsVisible(0);
+                jlistaDeAstronautas.setModel(modelAstroConsulta);
+                jlistaDeAstronautas.setSelectedIndex(0);
+                jlistaDeAstronautas.ensureIndexIsVisible(0);
 
 
             }
@@ -756,9 +766,9 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                             .contains(parteDoNome) || (astronauta
                             .getSobrenome().toLowerCase()
                             .contains(parteDoNome)))).forEach(modelAstroConsulta::addElement);
-                    listaDeAstronautas.setModel(modelAstroConsulta);
-                    listaDeAstronautas.setSelectedIndex(0);
-                    listaDeAstronautas.ensureIndexIsVisible(0);
+                    jlistaDeAstronautas.setModel(modelAstroConsulta);
+                    jlistaDeAstronautas.setSelectedIndex(0);
+                    jlistaDeAstronautas.ensureIndexIsVisible(0);
                 } catch (Exception e2) {
                     // TODO: handle exception
                 }
@@ -771,17 +781,27 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
             if (acao.equals("Atualiza")){
                 System.out.println("atualizando ----------------------------------------->");
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-                System.out.println("Operação realizada com sucesso-------> " + getListaDeAstronautas().getModel().getSize() + " registros encontrados.");
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                System.out.println("OperaÃ§Ã£o realizada com sucesso-------> " + getListaDeAstronautas().getModel().getSize() + " registros encontrados.");
                 mostraStatusListaAstro();
             }
+            
+            if (acao.equals("Preparar Imagens")){
 
-            // Ordenar por IdAstronauta = ordem de viagem ao espaço
+                // usar a rotina abaixo para preparar as imagens, no formato padrao 140px X 210px
+                // Caso nao seja necessaria preparacao, comentar a linha de codigo!
+                
+                //***************************************************
+                	FormatadorDeImagem.preparaImagens(astronautas);
+                //***************************************************
+            }
+
+            // Ordenar por IdAstronauta = ordem de viagem ao espaÃ§o
             if (acao.equals(sOrdenar[0*3])) {
                 //IdAstronautaComparator comparator = new IdAstronautaComparator();
                 setOrdem(acao);
                 Collections.sort(astronautas, OrdenarAstronautas.PorIdAstronauta.asc());
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
             }
 
             // Ordenar por sobrenome
@@ -789,7 +809,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 //SobrenomeComparator comparator = new SobrenomeComparator();
                 setOrdem(acao);
                 Collections.sort(astronautas, OrdenarAstronautas.PorSobrenome.asc());
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
             }
 
             // Ordenar por data de nascimento
@@ -797,15 +817,15 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 //DataNascComparator comparator = new DataNascComparator();
                 setOrdem(acao);
                 Collections.sort(astronautas, OrdenarAstronautas.PorDtNasc.asc());
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
             }
 
-            // Ordenar por número de missões
+            // Ordenar por nÃºmero de missÃµes
             if (acao.equals(sOrdenar[3*3])) {
                 //MissoesComparator comparator = new MissoesComparator();
                 setOrdem(acao);
                 Collections.sort(astronautas, OrdenarAstronautas.PorNumDeMissoes.desc());
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
             }
 
             // Ordenar por cidade de nascimento
@@ -813,10 +833,10 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 //CidadeComparator comparator = new CidadeComparator();
                 setOrdem(acao);
                 Collections.sort(astronautas, OrdenarAstronautas.PorCidade.asc());
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
             }
 
-            // Ordenar por tempo no espaço
+            // Ordenar por tempo no espaÃ§o
             if (acao.equals(sOrdenar[5*3])) {
                 //TODO: implementar
                 setOrdem(acao);
@@ -852,7 +872,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         public void mostraMsgOperNaoImplementada() throws HeadlessException {
             JOptionPane.showMessageDialog(
                     AstronautaGUI.this,
-                    "Huh... Não entendi... Vou ficar te devendo essa...",
+                    "Huh... NÃ£o entendi... Vou ficar te devendo essa...",
                     "Alerta",
                     JOptionPane.INFORMATION_MESSAGE,
                     new ImageIcon("./imagens/vetor/scary.png"));
@@ -869,11 +889,11 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
                 String paisSel = ((JMenuItem)eventoPais.getSource()).getIcon().toString();
 
-                // A expressão abaixo retorna o código ISO-3 do país, a partir do ícone armazenado no JMenuItem
+                // A expressÃ£o abaixo retorna o cÃ³digo ISO-3 do paÃ­s, a partir do Ã­cone armazenado no JMenuItem
                 setStrPais(paisSel.substring(16,19));
 
                 System.out.println("atualizando ----------------------------------------->");
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
                 mostraFiltros();
                 atualizaStatusBar(statusBar);
                 //mostraStatusListaAstro();
@@ -902,7 +922,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 }
 
                 System.out.println("atualizando ----------------------------------------->");
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
                 mostraFiltros();
                 atualizaStatusBar(statusBar);
                 //mostraStatusListaAstro();
@@ -924,10 +944,10 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 setStrGrupo(grupo.equals("Todos") ? "ALL": grupo);
 
 					/*
-					 * TODO: criar método para consulta
+					 * TODO: criar mÃ©todo para consulta
 					 */
                 System.out.println("atualizando ----------------------------------------->");
-                listaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+                jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
                 mostraFiltros();
                 atualizaStatusBar(statusBar);
                 //mostraStatusListaAstro();
@@ -937,7 +957,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /***************************************************
-     *           MÉTODO PARA FORMATAR IMAGEM
+     *           MÃ‰TODO PARA FORMATAR IMAGEM
      ***************************************************/
     private void trataImagem(Astronauta astronauta) {
         BufferedImage imagem = null;
@@ -955,7 +975,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /***************************************************
-     *           INICIALIZAÇÃO DOS COMPONENTES
+     *           INICIALIZAÃ‡ÃƒO DOS COMPONENTES
      ***************************************************/
     private void inicializa() throws HeadlessException, SQLException {
 			    /*
@@ -970,7 +990,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(
                     AstronautaGUI.this,
-                    "Não foi possível inicializar o sistema!",
+                    "NÃ£o foi possÃ­vel inicializar o sistema!",
                     "Alerta",
                     JOptionPane.ERROR_MESSAGE,
                     new ImageIcon("./imagens/vetor/scary.png"));
@@ -998,7 +1018,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     }
 
     /****************************************************************************************
-     *                                    Método MAIN()
+     *                                    MÃ©todo MAIN()
      ****************************************************************************************/
     public static void main(String s[]) {
         SwingUtilities.invokeLater(() -> {
@@ -1007,7 +1027,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
             } catch (SQLException | IOException e) {
                 JOptionPane.showMessageDialog(
                         null,
-                        "Erro de Conexão!",
+                        "Erro de ConexÃ£o!",
                         "Alerta",
                         JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();

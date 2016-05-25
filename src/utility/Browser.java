@@ -162,6 +162,7 @@ class MemComboAgent extends KeyAdapter {
     }
 }
 
+@SuppressWarnings("ALL")
 class MemComboBox extends JComboBox {
     /**
 	 * 
@@ -176,6 +177,7 @@ class MemComboBox extends JComboBox {
 
     public void add(String item) {
         removeItem(item);
+        //noinspection unchecked
         insertItemAt(item, 0);
         setSelectedItem(item);
         if (getItemCount() > MAX_MEM_LEN)
