@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3825444186">
-    <data-source source="LOCAL" name="MySQL - @xmysql.astronautdatabase.com" uuid="d70676de-a13b-48ce-9afe-f7bea7296366">
+  <component name="DataSourceManagerImpl" format="xml" hash="639609300">
+    <data-source source="LOCAL" name="MySQL - astronautdatabase@xmysql.astronautdatabase.com" uuid="d70676de-a13b-48ce-9afe-f7bea7296366">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://xmysql.astronautdatabase.com:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://xmysql.astronautdatabase.com:3306/astronautdatabase</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - astronautdatabase@localhost" uuid="33419515-048d-400c-8a21-ecf7487dbf77">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/astronautdatabase</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
