@@ -1,6 +1,5 @@
 # astronautdatabase
 Astronauts database
-"# astronautdatabase-master" 
 
 INSTRUCTIONS:
 
