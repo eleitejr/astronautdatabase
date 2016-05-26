@@ -11,7 +11,7 @@ import dao.AstronautaDAO;
 import dao.ConnectionFactory;
 import modelo.Astronauta;
 import modelo.JListaDeAstronautas;
-import modelo.ListaDePaises;
+import modelo.JListaDePaises;
 import modelo.Pais;
 import swingHelper.StatusBar;
 import utility.FormatadorDeImagem;
@@ -44,7 +44,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     private static ArrayList<Astronauta> 	astronautas;
     private static ArrayList<Pais> 			paises;
     private JListaDeAstronautas 			jlistaDeAstronautas; 						// caixa de lista p/ escolha nome
-    private ListaDePaises					listaDePaises;								// caixa de lista p/ escolha pais
+    private JListaDePaises					jlistaDePaises;								// caixa de lista p/ escolha pais
     private JTextArea 						taInfo; 									// areas de texto p/ info astronauta
     private JTextArea 						taInfoBio;
     private JTextArea					    taInfoConnection;							// propriedades da conexÃ£o
@@ -190,12 +190,12 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         this.jlistaDeAstronautas = listaDeAstronautas;
     }
 
-    public ListaDePaises getListaDePaises() {
-        return listaDePaises;
+    public JListaDePaises getListaDePaises() {
+        return jlistaDePaises;
     }
 
-    public void setListaDePaises(ListaDePaises listaDePaises) {
-        this.listaDePaises = listaDePaises;
+    public void setListaDePaises(JListaDePaises listaDePaises) {
+        this.jlistaDePaises = listaDePaises;
     }
 
     public String getStrDataNasc() {
@@ -530,7 +530,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         jlistaDeAstronautas = new JListaDeAstronautas(getAstronautas());
 
         // CRIA LISTA DE PAISES E CARREGA NO JLIST
-        listaDePaises = new ListaDePaises(getPaises());
+        jlistaDePaises = new JListaDePaises(getPaises());
 
     }
 
@@ -575,7 +575,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         String nome = selecionado.getPrimeiro_Nome() + " "
                 + selecionado.getNome_do_Meio() + " "
                 + selecionado.getSobrenome() + "\n";
-        String pais = listaDePaises.mostraNome(selecionado.getPais_Nasc(), paises) + "\n";
+        String pais = jlistaDePaises.mostraNome(selecionado.getPais_Nasc(), paises) + "\n";
         String estado = selecionado.getEstado_Nasc() + "\n";
         String cidade = selecionado.getCidade_Nasc() + "\n";
         LocalDate dataNasc = selecionado.getDtNasc();

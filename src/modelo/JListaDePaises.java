@@ -16,7 +16,7 @@ import javax.swing.ListSelectionModel;
  *
  */
 @SuppressWarnings("serial")
-public class ListaDePaises extends JList<Pais>{
+public class JListaDePaises extends JList<Pais>{
     private DefaultListModel<Pais> modelPais;
 
     public DefaultListModel<Pais> getModelPais() {
@@ -27,21 +27,21 @@ public class ListaDePaises extends JList<Pais>{
         this.modelPais = modelPais;
     }
 
-    public ListaDePaises(DefaultListModel<Pais> dataModel) {
+    public JListaDePaises(DefaultListModel<Pais> dataModel) {
         super();
         this.modelPais = dataModel;
     }
 
-    public ListaDePaises(Collection<Pais> paises) {
+    public JListaDePaises(Collection<Pais> paises) {
         inicializa(paises);
     }
 
-    public ListaDePaises(Pais[] listData) {
+    public JListaDePaises(Pais[] listData) {
         super(listData);
         // TODO Auto-generated constructor stub
     }
 
-    public ListaDePaises(Vector<? extends Pais> listData) {
+    public JListaDePaises(Vector<? extends Pais> listData) {
         super(listData);
         // TODO Auto-generated constructor stub
     }
@@ -79,7 +79,7 @@ public class ListaDePaises extends JList<Pais>{
     /**
      *
      */
-    public ListaDePaises() {
+    public JListaDePaises() {
         // TODO Auto-generated constructor stub
     }
 
