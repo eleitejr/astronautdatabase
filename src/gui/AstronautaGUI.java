@@ -49,7 +49,8 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     private JTextArea 						taInfoBio;
     private JTextArea					    taInfoConnection;							// propriedades da conexÃ£o
     private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
-
+    private JLabel                          lbl_bandeira;                               // lbl_bandeira contem a bandeira do pais
+	
     private final File arqFonte = new File ("./fontes/Spaceport.ttf");
 
     private static final int 	larguraJanela = 140;			// o tamanho da janela da foto
@@ -409,7 +410,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     private void criaPainel() throws SQLException {
         // painel de divisao
         JSplitPane split1 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-                new JLabel(new ImageIcon("imagens/vetor/logoAstroDB.png")), // imagem
+                lbl_bandeira = new JLabel("", new ImageIcon(), JLabel.CENTER), // imagem
                 new JScrollPane(jlistaDeAstronautas)); // diretorio
 
         JSplitPane split2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,// painel de divisao interno
@@ -440,11 +441,12 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         } catch (FontFormatException | IOException e1) {
             fonte = new Font("Verdana", Font.BOLD, 14);
         }
-        split1.setDividerLocation(50);
+        split1.setDividerLocation(133);
         split2.setBorder(BorderFactory.createLoweredBevelBorder());
         split2.setDividerLocation(larguraJanela);
         split2.setOneTouchExpandable(true);
         split3.setDividerLocation(alturaJanela);
+        split4.setDividerLocation(200);
         split5.setDividerLocation(1000);
 
         /*****************************************************************************************
@@ -633,6 +635,25 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         assert imagem != null;
         lbl_foto.setIcon(new ImageIcon(imagem));
 
+	// imagem da bandeira
+
+        ImageIcon bandeiraVazia = new ImageIcon("./imagens/flag/lv.gif");
+        ImageIcon bandeira = null;
+
+
+        try {
+            File entrada = new File("./imagens/flag_jpg/" + selecionado.getPais_Nasc() + ".jpg");
+            imagem = ImageIO.read(entrada);
+            bandeira = new ImageIcon(imagem);
+
+        } catch (Exception exc) {
+            bandeira = bandeiraVazia;
+        }
+
+        lbl_bandeira.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        lbl_bandeira.setSize(200, 133);
+        assert bandeira != null;
+        lbl_bandeira.setIcon(bandeira);
 
     }
 
