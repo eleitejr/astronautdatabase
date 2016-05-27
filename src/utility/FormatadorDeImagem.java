@@ -51,8 +51,62 @@ public class FormatadorDeImagem {
             }
         }
 
+        ArrayList<String> bandeiras = new ArrayList<>();
+
+        bandeiras.add("AFG.jpg");
+        bandeiras.add("ZAF.jpg");
+        bandeiras.add("DEU.jpg");
+        bandeiras.add("SAU.jpg");
+        bandeiras.add("AUT.jpg");
+        bandeiras.add("BEL.jpg");
+        bandeiras.add("BRA.jpg");
+        bandeiras.add("BGR.jpg");
+        bandeiras.add("SVK.jpg");
+        bandeiras.add("USA.jpg");
+        bandeiras.add("FRA.jpg");
+        bandeiras.add("CAN.jpg");
+        bandeiras.add("KAZ.jpg");
+        bandeiras.add("CHN.jpg");
+        bandeiras.add("KOR.jpg");
+        bandeiras.add("CUB.jpg");
+        bandeiras.add("HUN.jpg");
+        bandeiras.add("ITA.jpg");
+        bandeiras.add("IND.jpg");
+        bandeiras.add("ISR.jpg");
+        bandeiras.add("JPN.jpg");
+        bandeiras.add("MYS.jpg");
+        bandeiras.add("MEX.jpg");
+        bandeiras.add("MNG.jpg");
+        bandeiras.add("POL.jpg");
+        bandeiras.add("CZE.jpg");
+        bandeiras.add("GBR.jpg");
+        bandeiras.add("ROU.jpg");
+        bandeiras.add("RUS.jpg");
+        bandeiras.add("SYR.jpg");
+        bandeiras.add("SWE.jpg");
+        bandeiras.add("CHE.jpg");
+        bandeiras.add("UKR.jpg");
+        bandeiras.add("VNM.jpg");
+
+        imagem = null;
+        for (String bandeira : bandeiras) {
+
+            try {
+                File entrada = new File("./imagens/flag_jpg/" + bandeira);
+
+                imagem = FormatadorDeImagem.formataImagem(ImageIO.read(entrada), 200, 133);
+
+                ImageIO.write(imagem, "jpg", entrada);
+
+                System.out.println("Formatando imagem " + entrada.toString());
+
+            } catch (IOException ignored) {
+            }
+        }
+
         System.out.println();
         System.out.println(astronautas.size() + " imagens formatadas no padrao 140px X 210px.");
+        System.out.println(bandeiras.size() + " imagens formatadas no padrao 200px X 133px.");
     }
 
 
