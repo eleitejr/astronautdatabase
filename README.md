@@ -1,5 +1,5 @@
 # astronautdatabase
-Astronauts database
+Astronauts database personal project!
 
 INSTRUCTIONS:
 
