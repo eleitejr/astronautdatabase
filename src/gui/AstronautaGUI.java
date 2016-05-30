@@ -867,6 +867,14 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
                 	FormatadorDeImagem.preparaImagens(astronautas);
                 //***************************************************
             }
+            
+            if (acao.equals("Testa Funcoes Especiais")){
+
+
+                //**************************************************************************
+                    teste.testaFuncaoIsAlive.imprimeListaAstronautasFalecidos(astronautas);
+                //**************************************************************************
+            }
 
             // Ordenar por IdAstronauta = ordem de viagem ao espaÃ§o
             if (acao.equals(sOrdenar[0*3])) {
