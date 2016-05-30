@@ -84,7 +84,10 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
             null, null, null,
             "Editar registro", "database--pencil.png", "d",
             "Inserir registro","database-insert.png","I",
-            "Remover registro", "database-delete.png","e"};
+            "Remover registro", "database-delete.png","e",
+            null, null, null,
+            "Preparar Imagens", "shuttle.png","I",
+            "Testa Funcoes Especiais", "yin-yang.png", "i"};
 
     private static final String[] sPais = {
             "Todos","ALL.png","T",
