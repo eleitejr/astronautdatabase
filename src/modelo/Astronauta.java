@@ -215,6 +215,10 @@ public class Astronauta {
 	public void setImagem(Blob imagem) {
 		Imagem = imagem;
 	}
+	
+	public boolean isAlive(){
+		return this.getDtFalec().isAfter(LocalDate.now()) || this.getDtFalec().isEqual(null);
+	}
 
 	@Override
 	public String toString() {

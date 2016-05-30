@@ -299,6 +299,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
 
         MenuBuilder.imagePrefix = "./imagens/vetor/";
         JMenu menuTools = new JMenu("Ferramentas");
+        menuTools.setMnemonic('t');
         //menuTools.setIcon(new ImageIcon(MenuBuilder.imagePrefix + "Toolbox.png"));
         
         JMenu menuBancoDeDados = MenuBuilder.newMenu("Banco de Dados", 'D', sBanco, mh);
@@ -314,7 +315,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
         mb.add(menuTools);
         
         /*****************************************************************************************
-        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU FILTAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MENU FILTRAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         
         Permite acessar ferramentas de tratamento de imagem, atualização de dados e outros.
         ******************************************************************************************/
@@ -352,6 +353,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
          */
 
         JMenu menuSexo = new JMenu("Sexo");
+        menuSexo.setMnemonic('x');
         menuSexo.setIcon(new ImageIcon("./imagens/vetor/gender.png"));
         JRadioButtonMenuItem miAmbos = new JRadioButtonMenuItem("Ambos", true);
         miAmbos.setIcon(new ImageIcon("./imagens/vetor/users.png"));
