@@ -2,84 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c010272-78bb-4670-ae00-78c86be3e988" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/astronautdatabase.jar" afterPath="$PROJECT_DIR$/astronautdatabase.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$1.class" afterPath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$Task.class" afterPath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/components/ProgressBarDemo2.class" afterPath="$PROJECT_DIR$/bin/components/ProgressBarDemo2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaCreate$1.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaCreate$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaCreate$2.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaCreate$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaCreate.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaCreate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaEdit$1.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaEdit$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaEdit$2.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaEdit$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaEdit.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaEdit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/ListaAstronauta.class" afterPath="$PROJECT_DIR$/bin/crud/ListaAstronauta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dao/AstronautaDAO.class" afterPath="$PROJECT_DIR$/bin/dao/AstronautaDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dao/ConnectionFactory.class" afterPath="$PROJECT_DIR$/bin/dao/ConnectionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dao/TestaDAOAstronauta.class" afterPath="$PROJECT_DIR$/bin/dao/TestaDAOAstronauta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Astronauta.class" afterPath="$PROJECT_DIR$/bin/modelo/Astronauta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/CidadeComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/CidadeComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/DataNascComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/DataNascComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/IdAstronautaComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/IdAstronautaComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/JListaDeAstronautas.class" afterPath="$PROJECT_DIR$/bin/modelo/JListaDeAstronautas.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/JListaDePaises.class" afterPath="$PROJECT_DIR$/bin/modelo/JListaDePaises.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Missao.class" afterPath="$PROJECT_DIR$/bin/modelo/Missao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/MissoesComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/MissoesComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Pais.class" afterPath="$PROJECT_DIR$/bin/modelo/Pais.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Programa.class" afterPath="$PROJECT_DIR$/bin/modelo/Programa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/SobrenomeComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/SobrenomeComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso$1.class" afterPath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso.class" afterPath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/StatusBar.class" afterPath="$PROJECT_DIR$/bin/swingHelper/StatusBar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/SwingHelper.class" afterPath="$PROJECT_DIR$/bin/swingHelper/SwingHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener$1.class" afterPath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener.class" afterPath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser$1.class" afterPath="$PROJECT_DIR$/bin/utility/Browser$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser$BrowserListener.class" afterPath="$PROJECT_DIR$/bin/utility/Browser$BrowserListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser$BrowserLoader.class" afterPath="$PROJECT_DIR$/bin/utility/Browser$BrowserLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser.class" afterPath="$PROJECT_DIR$/bin/utility/Browser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/EditorPaneSample.class" afterPath="$PROJECT_DIR$/bin/utility/EditorPaneSample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/FormatadorDeImagem.class" afterPath="$PROJECT_DIR$/bin/utility/FormatadorDeImagem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink$1.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkMouseListener.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkMouseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkRunner.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkRunner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/MaximumSizeFilter.class" afterPath="$PROJECT_DIR$/bin/utility/MaximumSizeFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/MemComboAgent.class" afterPath="$PROJECT_DIR$/bin/utility/MemComboAgent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/MemComboBox.class" afterPath="$PROJECT_DIR$/bin/utility/MemComboBox.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/StringFormat.class" afterPath="$PROJECT_DIR$/bin/utility/StringFormat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AstronautDatabase.eml" afterPath="$PROJECT_DIR$/AstronautDatabase.eml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/imagens/vetor/.gitignore" afterPath="$PROJECT_DIR$/imagens/vetor/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/astronauta.sql" afterPath="$PROJECT_DIR$/sql/astronauta.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ProgressBarDemo2.java" afterPath="$PROJECT_DIR$/src/components/ProgressBarDemo2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crud/AstronautaCreate.java" afterPath="$PROJECT_DIR$/src/crud/AstronautaCreate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/crud/ListaAstronauta.java" afterPath="$PROJECT_DIR$/src/crud/ListaAstronauta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/ConnectionFactory.java" afterPath="$PROJECT_DIR$/src/dao/ConnectionFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/AstronautaGUI.java" afterPath="$PROJECT_DIR$/src/gui/AstronautaGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/ListaPaises.java" afterPath="$PROJECT_DIR$/src/gui/ListaPaises.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/ListaSplit.java" afterPath="$PROJECT_DIR$/src/gui/ListaSplit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MenuBuilder.java" afterPath="$PROJECT_DIR$/src/gui/MenuBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/OrdenarAstronautas.java" afterPath="$PROJECT_DIR$/src/gui/OrdenarAstronautas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/Painel.java" afterPath="$PROJECT_DIR$/src/gui/Painel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/framePanels.java" afterPath="$PROJECT_DIR$/src/gui/framePanels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/CidadeComparator.java" afterPath="$PROJECT_DIR$/src/modelo/CidadeComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/DataNascComparator.java" afterPath="$PROJECT_DIR$/src/modelo/DataNascComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/IdAstronautaComparator.java" afterPath="$PROJECT_DIR$/src/modelo/IdAstronautaComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/JListaDePaises.java" afterPath="$PROJECT_DIR$/src/modelo/JListaDePaises.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/MissoesComparator.java" afterPath="$PROJECT_DIR$/src/modelo/MissoesComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modelo/SobrenomeComparator.java" afterPath="$PROJECT_DIR$/src/modelo/SobrenomeComparator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/swingHelper/BarraDeProgresso.java" afterPath="$PROJECT_DIR$/src/swingHelper/BarraDeProgresso.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/swingHelper/StatusBar.java" afterPath="$PROJECT_DIR$/src/swingHelper/StatusBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/swingHelper/SwingHelper.java" afterPath="$PROJECT_DIR$/src/swingHelper/SwingHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/ActivatedHyperlinkListener.java" afterPath="$PROJECT_DIR$/src/utility/ActivatedHyperlinkListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/Browser.java" afterPath="$PROJECT_DIR$/src/utility/Browser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/EditorPaneSample.java" afterPath="$PROJECT_DIR$/src/utility/EditorPaneSample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/JLabelLink.java" afterPath="$PROJECT_DIR$/src/utility/JLabelLink.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/MaximumSizeFilter.java" afterPath="$PROJECT_DIR$/src/utility/MaximumSizeFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/StringFormat.java" afterPath="$PROJECT_DIR$/src/utility/StringFormat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update.patch" afterPath="$PROJECT_DIR$/update.patch" />
     </list>
     <ignored path="AstronautDatabase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,8 +41,8 @@
       <file leaf-file-name="AstronautaGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
+            <state relative-caret-position="479">
+              <caret line="109" column="84" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -130,12 +53,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#6017#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#5946#5947#0" expanded="false" />
-                <element signature="e#5996#5997#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,6 +71,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -205,6 +124,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -224,10 +145,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="astronautdatabase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="astronautdatabase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="astronautdatabase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="astronautdatabase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="astronautdatabase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="astronautdatabase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,6 +204,8 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.AstronautDatabase">
     <configuration default="false" name="BarraDeProgresso" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -753,12 +724,21 @@
       <workItem from="1464608827125" duration="332000" />
       <workItem from="1464609193637" duration="764000" />
       <workItem from="1464610092737" duration="29000" />
-      <workItem from="1464657413358" duration="58000" />
+      <workItem from="1464657413358" duration="6032000" />
+      <workItem from="1464691515418" duration="579000" />
     </task>
+    <task id="LOCAL-00001" summary="Update home 30/05/2016 22:18">
+      <created>1464663336676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1464663336676</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7236000" />
+    <option name="totallyTimeSpent" value="13789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="52" width="1855" height="1028" extended-state="0" />
@@ -772,10 +752,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16280323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938007" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16280323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938007" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -788,7 +770,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -801,6 +782,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update home 30/05/2016 22:18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update home 30/05/2016 22:18" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -823,12 +808,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#6017#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5946#5947#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -852,12 +832,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#6017#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5946#5947#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -881,12 +856,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#6017#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5946#5947#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/FormatadorDeImagem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProgressBarDemo2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -910,12 +904,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#6017#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5946#5947#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -939,12 +928,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#6017#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5946#5947#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,19 +999,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#6017#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5946#5947#0" expanded="false" />
-            <element signature="e#5996#5997#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
+        <state relative-caret-position="479">
+          <caret line="109" column="84" selection-start-line="109" selection-start-column="35" selection-end-line="109" selection-end-column="35" />
           <folding />
         </state>
       </provider>
