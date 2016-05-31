@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    <extension
+         point="org.eclipse.pde.ui.samples">
+      <sample
+            name="%sample.readmetool.name"
+            perspectiveId="org.eclipse.jdt.ui.JavaPerspective"
+            targetViewId="org.eclipse.jdt.ui.PackageExplorer"
+            id="org.eclipse.sdk.samples.readmetool">
+         <description
+               helpHref="/org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.readmetool/doc-html/ui_readmetool_ex.html">
+           %sample.readmetool.desc
+         </description>
+         <activity id="org.eclipse.javaDevelopment"/>
+         <activity id="org.eclipse.debugging"/>
+         <activity id="org.eclipse.plugInDevelopment"/>
+         <project
+               name="org.eclipse.ui.examples.readmetool"
+               selectReveal="Eclipse UI Examples Readme Tool/org/eclipse/ui/examples/readmetool/AdaptableList.java"
+               archive="samples/readmetool.zip">
+         </project>
+      </sample>
+      <sample
+            targetViewId="org.eclipse.jdt.ui.PackageExplorer"
+            perspectiveId="org.eclipse.jdt.ui.JavaPerspective"
+            name="%sample.javaeditor.name"
+            id="org.eclipse.sdk.samples.javaeditor">
+         <description
+               helpHref="/org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.javaeditor/doc-html/ui_javaeditor_ex.html">
+            %sample.javaeditor.desc
+         </description>
+         <project
+               archive="samples/javaeditor.zip"
+               name="org.eclipse.ui.examples.javaeditor"
+               selectReveal="Eclipse Java Editor Example/org/eclipse/ui/examples/javaeditor/JavaActionContributor.java">
+         </project>
+         <activity id="org.eclipse.javaDevelopment"/>
+         <activity id="org.eclipse.debugging"/>
+         <activity id="org.eclipse.plugInDevelopment"/>
+      </sample>
+      <sample
+            targetViewId="org.eclipse.jdt.ui.PackageExplorer"
+            perspectiveId="org.eclipse.jdt.ui.JavaPerspective"
+            name="%sample.multipageeditor.name"
+            id="org.eclipse.sdk.samples.multipageeditor">
+         <description
+               helpHref="/org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.multipageeditor/doc-html/ui_multipageeditor_ex.html">
+            %sample.multipageeditor.desc
+         </description>
+         <project
+               archive="samples/multipageeditor.zip"
+               name="org.eclipse.ui.examples.multipageeditor"
+               selectReveal="Eclipse UI Examples MultiPageEditor/org/eclipse/ui/examples/multipageeditor/MessageUtil.java">
+         </project>
+         <activity id="org.eclipse.javaDevelopment"/>
+         <activity id="org.eclipse.debugging"/>
+         <activity id="org.eclipse.plugInDevelopment"/>         
+      </sample>
+      <sample
+            targetViewId="org.eclipse.jdt.ui.PackageExplorer"
+            perspectiveId="org.eclipse.jdt.ui.JavaPerspective"
+            name="%sample.propertysheet.name"
+            id="org.eclipse.sdk.samples.propertysheet">
+         <description
+               helpHref="/org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.propertysheet/doc-html/ui_propertysheet_ex.html">
+            %sample.propertysheet.desc
+         </description>
+         <project
+               archive="samples/propertysheet.zip"
+               name="org.eclipse.ui.examples.propertysheet"
+               selectReveal="Eclipse UI Examples PropertySheet/org/eclipse/ui/examples/propertysheet/Address.java">
+         </project>
+         <activity id="org.eclipse.javaDevelopment"/>
+         <activity id="org.eclipse.debugging"/>
+         <activity id="org.eclipse.plugInDevelopment"/>         
+      </sample>
+      <sample
+            targetViewId="org.eclipse.jdt.ui.PackageExplorer"
+            perspectiveId="org.eclipse.jdt.ui.JavaPerspective"
+            name="%sample.swt.name"
+            id="org.eclipse.sdk.samples.swt.examples">
+         <description
+               helpHref="/org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.launcher/doc-html/swt_launcher_ex.html">
+            %sample.swt.desc
+         </description>
+         <project
+               archive="samples/swt/examples.zip"
+               name="org.eclipse.swt.examples"
+               selectReveal="src/org/eclipse/swt/examples/addressbook/AddressBook.java">
+         </project>
+         <project
+               name="org.eclipse.swt.examples.launcher"
+               archive="samples/swt/launcher.zip"
+               shared="true">
+         </project>
+         <project
+               name="org.eclipse.swt.examples.browser"
+               archive="samples/swt/browser.zip">
+         </project>
+         <project
+               name="org.eclipse.swt.examples.controls"
+               archive="samples/swt/controls.zip">
+         </project>
+         <project
+               name="org.eclipse.swt.examples.layouts"
+               archive="samples/swt/layouts.zip">
+         </project>
+         <project
+               name="org.eclipse.swt.examples.paint"
+               archive="samples/swt/paint.zip">
+         </project>
+         <activity id="org.eclipse.javaDevelopment"/>
+         <activity id="org.eclipse.debugging"/>
+         <activity id="org.eclipse.plugInDevelopment"/>         
+      </sample>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="%category.samples"
+            id="org.eclipse.sdk.samples.samples">
+      </category>
+      <category
+            name="%category.swt"
+            parentCategory="org.eclipse.sdk.samples.samples"
+            id="org.eclipse.sdk.samples.samples.swt">
+      </category>
+      <category
+            name="%category.workbench"
+            parentCategory="org.eclipse.sdk.samples.samples"
+            id="org.eclipse.sdk.samples.samples.workbench">
+      </category>
+      <category
+            name="%category.javatools"
+            parentCategory="org.eclipse.sdk.samples.samples"
+            id="org.eclipse.sdk.samples.samples.java">
+      </category>
+      <wizard
+            name="%sample.readmetool.name"
+            category="org.eclipse.sdk.samples.samples/org.eclipse.sdk.samples.samples.workbench"
+            class="org.eclipse.pde.internal.ui.samples.SampleWizard:org.eclipse.sdk.samples.readmetool"
+            project="true"
+            id="org.eclipse.sdk.samples.samples.readmetool">
+         <description>%sample.readmetool.desc
+         </description>
+      </wizard>
+      <wizard
+            name="%sample.javaeditor.name"
+            category="org.eclipse.sdk.samples.samples/org.eclipse.sdk.samples.samples.workbench"
+            class="org.eclipse.pde.internal.ui.samples.SampleWizard:org.eclipse.sdk.samples.javaeditor"
+            project="true"
+            id="org.eclipse.sdk.samples.samples.javaeditor">
+         <description>%sample.javaeditor.desc
+         </description>
+      </wizard>
+      <wizard
+            name="%sample.multipageeditor.name"
+            category="org.eclipse.sdk.samples.samples/org.eclipse.sdk.samples.samples.workbench"
+            class="org.eclipse.pde.internal.ui.samples.SampleWizard:org.eclipse.sdk.samples.multipageeditor"
+            project="true"
+            id="org.eclipse.sdk.samples.samples.multipageeditor">
+         <description>%sample.multipageeditor.desc
+         </description>
+      </wizard>
+      <wizard
+            name="%sample.propertysheet.name"
+            category="org.eclipse.sdk.samples.samples/org.eclipse.sdk.samples.samples.workbench"
+            class="org.eclipse.pde.internal.ui.samples.SampleWizard:org.eclipse.sdk.samples.propertysheet"
+            project="true"
+            id="org.eclipse.sdk.samples.samples.propertysheet">
+         <description>%sample.propertysheet.desc</description>
+      </wizard>
+      <wizard
+            name="%wizard.other.name"
+            category="org.eclipse.sdk.samples.samples/org.eclipse.sdk.samples.samples.workbench"
+            class="org.eclipse.pde.internal.ui.samples.SampleWizard"
+            project="true"
+            id="org.eclipse.sdk.samples.samples.other">
+         <description>%wizard.other.desc
+         </description>
+      </wizard>
+      <wizard
+            name="%sample.swt.name"
+            category="org.eclipse.sdk.samples.samples/org.eclipse.sdk.samples.samples.swt"
+            class="org.eclipse.pde.internal.ui.samples.SampleWizard:org.eclipse.sdk.samples.swt.examples"
+            project="true"
+            id="org.eclipse.sdk.samples.samples.swt.examples">
+         <description>%sample.swt.desc
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

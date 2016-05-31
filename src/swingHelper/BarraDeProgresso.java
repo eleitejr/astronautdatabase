@@ -10,7 +10,12 @@ import javax.swing.SwingUtilities;
 
 public class BarraDeProgresso extends JPanel {
 
-    JProgressBar pbar;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	JProgressBar pbar;
 
     static int min = 0;
 
@@ -37,7 +42,7 @@ public class BarraDeProgresso extends JPanel {
                     }
                 });
                 Thread.sleep(100);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
     }

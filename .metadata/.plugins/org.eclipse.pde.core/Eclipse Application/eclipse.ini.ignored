@@ -1,0 +1,22 @@
+-startup
+plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.200.v20150204-1316
+-product
+org.eclipse.epp.package.standard.product
+--launcher.defaultAction
+openFile
+-showsplash
+org.eclipse.platform
+--launcher.XXMaxPermSize
+256m
+--launcher.defaultAction
+openFile
+--launcher.appendVmargs
+-configuration
+../../media/erasmo/Death Star/workspace/AstronautDatabase/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application
+-vmargs
+-Dosgi.requiredJavaVersion=1.7
+-XX:MaxPermSize=256m
+-Xms40m
+-Xmx512m

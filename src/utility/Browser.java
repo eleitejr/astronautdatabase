@@ -36,7 +36,12 @@ import javax.swing.event.HyperlinkListener;
 
 public class Browser extends JFrame {
 
-    protected JEditorPane m_browser;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected JEditorPane m_browser;
 
     protected MemComboBox m_locator = new MemComboBox();
 
@@ -157,8 +162,13 @@ class MemComboAgent extends KeyAdapter {
     }
 }
 
+@SuppressWarnings("ALL")
 class MemComboBox extends JComboBox {
-    public static final int MAX_MEM_LEN = 30;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public static final int MAX_MEM_LEN = 30;
 
     public MemComboBox() {
         super();
@@ -167,6 +177,7 @@ class MemComboBox extends JComboBox {
 
     public void add(String item) {
         removeItem(item);
+        //noinspection unchecked
         insertItemAt(item, 0);
         setSelectedItem(item);
         if (getItemCount() > MAX_MEM_LEN)
