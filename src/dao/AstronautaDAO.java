@@ -190,7 +190,7 @@ public class AstronautaDAO {
 				catch (NullPointerException ex) {
 					// caso a data de falecimento seja nula,
 					// carrega valor futuro que será usado para
-					// teste na execução de AstronautaGUI
+					// teste2 na execução de AstronautaGUI
 					dataFalec = LocalDate.of(2200, 1, 1);
 				}
 

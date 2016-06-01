@@ -37,4 +37,21 @@ public class ConnectionFactory {
         }
     }
 
+    public static Connection getSQLiteConnection() throws ClassNotFoundException {
+
+        try {
+            // TENTA CONEXÃO COM BANCO DE DADOS SQLITE
+            Connection SQLiteConnection = null;
+            Class.forName("org.sqlite.JDBC");
+            SQLiteConnection = DriverManager.getConnection("jdbc:sqlite:./database/astronauta.db");
+            return SQLiteConnection;
+
+        } catch (SQLException e1) {
+            //  MOSTRA MENSAGEM DE ERRO EM CASO DE FALHA DE CONEXÃO COM BANCOS DE DADOS
+            JOptionPane.showMessageDialog(null,
+                    "Não foi possível estabelecer conexão...",
+                    "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon("./imagens/vetor/scary.png") );
+            throw new RuntimeException(e1);
+        }
+    }
 }
