@@ -30,7 +30,7 @@ public class ConnectionFactory {
             } catch (SQLException e1) {
                 //  MOSTRA MENSAGEM DE ERRO EM CASO DE FALHA DE CONEXÃO COM BANCOS DE DADOS
                 JOptionPane.showMessageDialog(null,
-                        "Não foi possível estabelecer conexão...",
+                        "Não foi possível estabelecer conexão com servidor MySQL...",
                         "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon("./imagens/vetor/scary.png") );
                 throw new RuntimeException(e);
             }
@@ -49,7 +49,7 @@ public class ConnectionFactory {
         } catch (SQLException e1) {
             //  MOSTRA MENSAGEM DE ERRO EM CASO DE FALHA DE CONEXÃO COM BANCOS DE DADOS
             JOptionPane.showMessageDialog(null,
-                    "Não foi possível estabelecer conexão...",
+                    "Não foi possível estabelecer conexão com servidor SQLite...",
                     "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon("./imagens/vetor/scary.png") );
             throw new RuntimeException(e1);
         }
