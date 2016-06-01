@@ -36,12 +36,13 @@ public class ConnectionFactory {
             }
         }
     }
-    
-    public static Connection getSQLiteConnection() {
+
+    public static Connection getSQLiteConnection() throws ClassNotFoundException {
 
         try {
             // TENTA CONEXÃO COM BANCO DE DADOS SQLITE
-            Connection SQLiteConnection;
+            Connection SQLiteConnection = null;
+            Class.forName("org.sqlite.JDBC");
             SQLiteConnection = DriverManager.getConnection("jdbc:sqlite:./database/astronauta.db");
             return SQLiteConnection;
 
@@ -53,5 +54,4 @@ public class ConnectionFactory {
             throw new RuntimeException(e1);
         }
     }
-
 }
