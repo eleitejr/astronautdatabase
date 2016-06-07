@@ -1,5 +1,5 @@
 /*********************************************************
- *  @file: AstronautaGUI.java
+ *  @file: AstronautaGUInovo.java
  *  @author: Erasmo de Castro Leite Junior
  *  @ : erasmo@astronautdatabase.com
  * *******************************************************/
@@ -38,9 +38,12 @@ import java.util.Collections;
 import java.util.List;
 
 import static dao.ConnectionFactory.getConnection;
+import static javax.swing.UIManager.*;
 
 @SuppressWarnings("serial")
-public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
+public class AstronautaGUInovo
+        extends JFrame
+        implements ListSelectionListener {
 
     private Connection 						con;
     private static ArrayList<Astronauta> 	astronautas;
@@ -51,6 +54,16 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
     private JTextArea 						taInfoBio;
     private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
     private JLabel                          lbl_bandeira;                               // lbl_bandeira contem a bandeira do pais
+    private JLabel                          m1_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m2_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m3_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m4_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m5_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m6_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m7_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
+                                            m8_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png"));
+
+    private JPanel                          painel_Missoes = new JPanel(new GridLayout(2,4));                                 // painel de biografia
 
     private final File arqFonte = new File ("./fontes/Spaceport.ttf");
 
@@ -152,11 +165,11 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
             "Ajuda","help16new.png","A", null, null, null,
             "Sobre ...","about16new.png","S"};
 
-    private String 	strSexo = "ALL",
-            strMissao = "ALL",
-            strPais = "ALL",
-            strDataNasc = "ALL",
-            strGrupo = "ALL";
+    private String 	strSexo         = "ALL",
+                    strMissao       = "ALL",
+                    strPais         = "ALL",
+                    strDataNasc     = "ALL",
+                    strGrupo        = "ALL";
 
     private String ConProperties;
     private String Ordem = sOrdenar[0];
@@ -259,6 +272,19 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
         super("Viajantes Espaciais - The Astronaut & Cosmonaut Database"); // ajusta titulo
         setIconImage(new ImageIcon("./imagens/vetor/astronaut-icon.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // acao fechar
+        try {
+            //setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+        } catch (UnsupportedLookAndFeelException ex) {
+            ex.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        } catch (InstantiationException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
         // setLocationRelativeTo(null);
 
         inicializa();
@@ -356,29 +382,42 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
      * @throws SQLException
      */
     private void criaPainel() {
-        // painel de divisao
-        JSplitPane split1 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // painel de divisao VERTICAL sp1 = Bandeira / Lista de Astronautas
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        JSplitPane sp1 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
                 lbl_bandeira = new JLabel("", new ImageIcon(), JLabel.CENTER), // imagem
                 new JScrollPane(jlistaDeAstronautas)); // diretorio
 
-        JSplitPane split2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,// painel de divisao interno
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // painel de divisao HORIZONTAL sp2 = Foto / Informações Básicas
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        JSplitPane sp2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,// painel de divisao interno
                 lbl_foto = new JLabel(), // janela com a Foto do astronauta
                 new JScrollPane(taInfo = new JTextArea())); // area de texto
 
-        JSplitPane split3 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-                split2,
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // painel de divisao HORIZONTAL sp3 = sp2 / Painel de Missões
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        JSplitPane sp3 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+                sp2,
+                painel_Missoes);
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // painel de divisao VERTICAL sp4 = sp3 / Informações de Biografia
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        JSplitPane sp4 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
+                sp3,
                 new JScrollPane(taInfoBio = new JTextArea())); // area de texto
 
-        JSplitPane split4 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
-                split1,
-                split3);
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // painel de divisao HORIZONTAL sp5 = sp1 / sp4
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        JSplitPane sp5 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+                sp1,
+                sp4);
 
-        JTextArea taInfoConnection;
-        JSplitPane split5 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-                split4,
-                new JScrollPane(taInfoConnection = new JTextArea())); // area de info sobre conexÃ£o
-
-        getContentPane().add(split5, "Center"); // adiciona a janela
+        getContentPane().add(sp5, "Center"); // adiciona a janela
 
 
         // outros ajustes
@@ -391,18 +430,19 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
             fonte = new Font("Verdana", Font.BOLD, 14);
             //e1.printStackTrace();
         }
-        split1.setDividerLocation(133);
-        split2.setBorder(BorderFactory.createLoweredBevelBorder());
-        split2.setDividerLocation(larguraJanela);
-        split2.setOneTouchExpandable(true);
-        split3.setDividerLocation(alturaJanela);
-        split4.setDividerLocation(200);
-        split5.setDividerLocation(1000);
+        sp1.setDividerLocation(133);
+        sp2.setBorder(BorderFactory.createLoweredBevelBorder());
+        sp2.setDividerLocation(larguraJanela);
+        sp2.setOneTouchExpandable(false);
+        sp4.setDividerLocation(alturaJanela);
+        sp3.setDividerLocation(520);
+        sp5.setDividerLocation(200);
 
         /*****************************************************************************************
          PAINEIS COM INFORMACOES SOBRE O VIAJANTE
          Apresenta as informacoes do astronauta selecionado.
          ******************************************************************************************/
+
         taInfo.setEditable(false);
         taInfo.setAutoscrolls(true);
         taInfoBio.setAutoscrolls(true);
@@ -574,6 +614,22 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
         atualizaStatusBar(statusBar);
         getContentPane().add(statusBar, BorderLayout.SOUTH); // adiciona barra de status
 
+        List<String> missoes = selecionado.getMissao();
+
+        for (String m : missoes){
+            if (true)
+            painel_Missoes.add(m1_sig);
+        };
+
+
+        painel_Missoes.add(m2_sig);
+        painel_Missoes.add(m3_sig);
+        painel_Missoes.add(m4_sig);
+        painel_Missoes.add(m5_sig);
+        painel_Missoes.add(m6_sig);
+        painel_Missoes.add(m7_sig);
+        painel_Missoes.add(m8_sig);
+
         /***************************************************
          *            PREPARACAO DAS IMAGENS
          ***************************************************/
@@ -636,6 +692,8 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
             lbl_foto.setSize(larguraJanela, alturaJanela);
             lbl_foto.setIcon(new ImageIcon(imagem));
         }
+
+
 */
     /***************************************
           ATUALIZACAO DA BARRA DE STATUS
@@ -1064,6 +1122,7 @@ public class AstronautaGUInovo extends JFrame implements ListSelectionListener {
         SwingUtilities.invokeLater(() -> {
             try {
                 new AstronautaGUInovo().setVisible(true);
+
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(
                         null,
