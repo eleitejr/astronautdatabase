@@ -54,6 +54,7 @@ public class AstronautaGUInovo
     private JTextArea 						taInfoBio;
     private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
     private JLabel                          lbl_bandeira;                               // lbl_bandeira contem a bandeira do pais
+
     private JLabel                          m1_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
                                             m2_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
                                             m3_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
@@ -285,7 +286,7 @@ public class AstronautaGUInovo
             ex.printStackTrace();
         }
 
-        // setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
 
         inicializa();
     }
@@ -610,25 +611,27 @@ public class AstronautaGUInovo
 
         taInfoBio.setText(sb2.toString());
 
+        List<String> missoes = selecionado.getMissao();
+        int contador = selecionado.getN_missoes();
+
+        /*****************************************************************************************
+         AREA COM IMAGENS DAS MISSÕES DO ASTRONAUTA
+         Exibe icones das missões de que o astronauta participou
+         ******************************************************************************************/
+
+        for (String m : missoes) {
+            painel_Missoes.add(new JLabel(new ImageIcon("./imagens/insignia/" + m + ".png")));
+        }
+        
+
+        /*****************************************************************************************
+         *                    STATUS BAR COM INFORMAÇÕES DA CONEXÃO
+         ******************************************************************************************/
+
         // inicializa statusBar
         atualizaStatusBar(statusBar);
         getContentPane().add(statusBar, BorderLayout.SOUTH); // adiciona barra de status
 
-        List<String> missoes = selecionado.getMissao();
-
-        for (String m : missoes){
-            if (true)
-            painel_Missoes.add(m1_sig);
-        };
-
-
-        painel_Missoes.add(m2_sig);
-        painel_Missoes.add(m3_sig);
-        painel_Missoes.add(m4_sig);
-        painel_Missoes.add(m5_sig);
-        painel_Missoes.add(m6_sig);
-        painel_Missoes.add(m7_sig);
-        painel_Missoes.add(m8_sig);
 
         /***************************************************
          *            PREPARACAO DAS IMAGENS
