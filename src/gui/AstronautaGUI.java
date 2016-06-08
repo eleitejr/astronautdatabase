@@ -77,6 +77,7 @@ public class AstronautaGUI extends JFrame implements ListSelectionListener {
     private static final String[] sBanco = {
             "Exportar","database-export.png","E",
             "Importar","database-import.png","m",
+            "Atualizar","database--exclamation.png","z",
             "Nuvem","database-cloud.png","v",
             "Rede","database-network.png","R",
             null, null, null,
