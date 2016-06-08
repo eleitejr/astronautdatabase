@@ -6,21 +6,15 @@
 
 package gui;
 
-import crud.AstronautaCreate;
-import dao.AstronautaDAO;
-import dao.AstronautaSQLiteDAO;
-import modelo.Astronauta;
-import modelo.JListaDeAstronautas;
-import modelo.JListaDePaises;
-import modelo.Pais;
-import swingHelper.StatusBar;
-import utility.FormatadorDeImagem;
+import static dao.ConnectionFactory.getConnection;
+import static javax.swing.UIManager.setLookAndFeel;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -37,8 +31,36 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static dao.ConnectionFactory.getConnection;
-import static javax.swing.UIManager.*;
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import crud.AstronautaCreate;
+import dao.AstronautaDAO;
+import modelo.Astronauta;
+import modelo.JListaDeAstronautas;
+import modelo.JListaDePaises;
+import modelo.Pais;
+import swingHelper.StatusBar;
+import utility.FormatadorDeImagem;
 
 @SuppressWarnings("serial")
 public class AstronautaGUInovo
@@ -510,7 +532,7 @@ public class AstronautaGUInovo
              {
 
         try {
-            AstronautaSQLiteDAO dao 	= new AstronautaSQLiteDAO(connection);
+            AstronautaDAO dao 	= new AstronautaDAO(connection);
 
             setAstronautas	(dao.pegaAstronautas());
 
