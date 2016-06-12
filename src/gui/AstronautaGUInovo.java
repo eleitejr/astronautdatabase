@@ -643,7 +643,7 @@ implements ListSelectionListener {
 		for (int m = 0; m < missoes.size(); ++m){
 			try {
 
-				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/" + missoes.get(m).trim() + ".png")));
+				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/small/" + missoes.get(m).trim() + ".png")));
 
 			}
 			finally{			
