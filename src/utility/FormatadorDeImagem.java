@@ -1,6 +1,7 @@
 package utility;
 
 import modelo.Astronauta;
+import modelo.Pais;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -107,6 +108,27 @@ public class FormatadorDeImagem {
         System.out.println();
         System.out.println(astronautas.size() + " imagens formatadas no padrao 140px X 210px.");
         System.out.println(bandeiras.size() + " imagens formatadas no padrao 200px X 133px.");
+    }
+    
+    public static void preparaBandeiras(ArrayList<Pais> paises) {
+        BufferedImage imagem = null;
+        for (Pais pais : paises) {
+
+            try {
+                File entrada = new File("./imagens/flags_big/" + pais.getId() + ".png");
+
+                imagem = FormatadorDeImagem.formataImagem(ImageIO.read(entrada), 128, 86);
+
+                ImageIO.write(imagem, "png", entrada);
+                
+                System.out.println("Formatando imagem " + entrada.toString());
+
+            } catch (IOException ignored) {
+            }
+        }
+
+        System.out.println();
+        System.out.println(paises.size() + " imagens formatadas no padrao 128px X 86px.");
     }
 
 
