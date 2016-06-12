@@ -76,16 +76,10 @@ implements ListSelectionListener {
 	private JTextArea 						taInfoBio;
 	private JLabel                          lbl_foto; 									// lbl_foto que contem a foto do astronauta
 	private JLabel                          lbl_bandeira;                               // lbl_bandeira contem a bandeira do pais
-	private final JLabel                          m1_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m2_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m3_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m4_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m5_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m6_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m7_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png")),
-			m8_sig = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png"));
+	private JLabel                    		m_sig[];
 
-	private final JPanel                          painel_Missoes = new JPanel(new GridLayout(2,4));                                 // painel de biografia
+
+	private final JPanel                    painel_Missoes = new JPanel(new GridLayout(2,4));                                 // painel de biografia
 
 	private final File arqFonte = new File ("./fontes/Spaceport.ttf");
 
@@ -484,6 +478,9 @@ implements ListSelectionListener {
 		jlistaDeAstronautas.addListSelectionListener(this);
 		jlistaDeAstronautas.setSelectedIndex(0); // elemento inicial da lista
 		//pack();
+		m_sig = new JLabel[8];
+		for (int m = 0; m < 8; ++m)	m_sig[m] = new JLabel(new ImageIcon("./imagens/vetor/space-rocket48.png"));
+
 	}
 	/**
 	 * @throws HeadlessException
@@ -636,18 +633,31 @@ implements ListSelectionListener {
 		atualizaStatusBar(statusBar);
 		getContentPane().add(statusBar, BorderLayout.SOUTH); // adiciona barra de status
 
-		@SuppressWarnings("unused")
+		/***************************************************
+		 *       ICONES DAS MISSOES
+		 ***************************************************/
+
 		List<String> missoes = selecionado.getMissao();
 
-		painel_Missoes.add(m1_sig);
 
-		painel_Missoes.add(m2_sig);
-		painel_Missoes.add(m3_sig);
-		painel_Missoes.add(m4_sig);
-		painel_Missoes.add(m5_sig);
-		painel_Missoes.add(m6_sig);
-		painel_Missoes.add(m7_sig);
-		painel_Missoes.add(m8_sig);
+		for (int m = 0; m < missoes.size(); ++m){
+			try {
+				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/" + missoes.get(m) + ".png")));
+
+			}
+			finally{			
+
+				m_sig[m].setIcon(new ImageIcon("./imagens/vetor/space-rocket48.png"));
+
+			}
+
+			painel_Missoes.add(m_sig[m]);
+
+		}
+
+
+
+
 
 		/***************************************************
 		 *            PREPARACAO DAS IMAGENS

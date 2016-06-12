@@ -19,18 +19,18 @@ public class Astronauta {
 	private int 			idAstronauta;
 
 	private String 			Primeiro_Nome,
-			Nome_do_Meio,
-			Sobrenome,
-			Pais_Nasc,
-			Estado_Nasc,
-			Cidade_Nasc,
-			Foto,
-			Sexo,
-			Info,
-			Info_eng;
+	Nome_do_Meio,
+	Sobrenome,
+	Pais_Nasc,
+	Estado_Nasc,
+	Cidade_Nasc,
+	Foto,
+	Sexo,
+	Info,
+	Info_eng;
 
 	private LocalDate 			DtNasc,
-			DtFalec;
+	DtFalec;
 
 	private List<String> 	missao;
 
@@ -215,9 +215,12 @@ public class Astronauta {
 	public void setImagem(Blob imagem) {
 		Imagem = imagem;
 	}
-	
+
 	public boolean isAlive(){
-		return this.getDtFalec().isAfter(LocalDate.now()) || this.getDtFalec().isEqual(null);
+		return 
+				this.getDtFalec().isAfter(LocalDate.now()) 
+				//|| this.getDtFalec().isEqual(null)
+				;
 	}
 
 	@Override
