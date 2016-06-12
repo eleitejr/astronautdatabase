@@ -642,12 +642,13 @@ implements ListSelectionListener {
 
 		for (int m = 0; m < missoes.size(); ++m){
 			try {
-				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/" + missoes.get(m) + ".png")));
+				System.out.println(missoes.get(m));
+				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/" + missoes.get(m).trim() + ".png")));
 
 			}
 			finally{			
 
-				m_sig[m].setIcon(new ImageIcon("./imagens/vetor/space-rocket48.png"));
+				//m_sig[m].setIcon(new ImageIcon("./imagens/insignia/empty.png"));
 
 			}
 
