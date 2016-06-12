@@ -634,7 +634,7 @@ implements ListSelectionListener {
 		getContentPane().add(statusBar, BorderLayout.SOUTH); // adiciona barra de status
 
 		/***************************************************
-		 *       ICONES DAS MISSOES
+		 *       PAINEL DAS MISSOES
 		 ***************************************************/
 
 		List<String> missoes = selecionado.getMissao();
@@ -642,7 +642,7 @@ implements ListSelectionListener {
 
 		for (int m = 0; m < missoes.size(); ++m){
 			try {
-				System.out.println(missoes.get(m));
+
 				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/" + missoes.get(m).trim() + ".png")));
 
 			}
