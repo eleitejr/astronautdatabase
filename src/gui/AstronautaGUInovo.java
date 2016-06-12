@@ -636,13 +636,10 @@ implements ListSelectionListener {
 		atualizaStatusBar(statusBar);
 		getContentPane().add(statusBar, BorderLayout.SOUTH); // adiciona barra de status
 
+		@SuppressWarnings("unused")
 		List<String> missoes = selecionado.getMissao();
 
-		for (String m : missoes){
-			if (true)
-				painel_Missoes.add(m1_sig);
-		};
-
+		painel_Missoes.add(m1_sig);
 
 		painel_Missoes.add(m2_sig);
 		painel_Missoes.add(m3_sig);
@@ -1079,6 +1076,7 @@ implements ListSelectionListener {
 	/***************************************************
 	 *           METODO PARA FORMATAR IMAGEM
 	 ***************************************************/
+	@SuppressWarnings("unused")
 	private void trataImagem(Astronauta astronauta) {
 		BufferedImage imagem = null;
 		try {
