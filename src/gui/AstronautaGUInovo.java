@@ -61,6 +61,7 @@ import modelo.JListaDePaises;
 import modelo.Pais;
 import swingHelper.StatusBar;
 import utility.FormatadorDeImagem;
+import de.javasoft.plaf.synthetica.SyntheticaBlueLightLookAndFeel;
 
 @SuppressWarnings("serial")
 public class AstronautaGUInovo
