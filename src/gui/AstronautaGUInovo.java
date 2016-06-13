@@ -9,6 +9,7 @@ package gui;
 import crud.AstronautaCreate;
 import dao.AstronautaDAO;
 import de.javasoft.plaf.synthetica.SyntheticaBlueLightLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import modelo.Astronauta;
 import modelo.JListaDeAstronautas;
 import modelo.JListaDePaises;
@@ -273,6 +274,7 @@ implements ListSelectionListener {
 			//setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 			//setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			UIManager.setLookAndFeel(new SyntheticaBlueLightLookAndFeel());
+			
 		} catch (UnsupportedLookAndFeelException ex) {
 			ex.printStackTrace();
 		}
