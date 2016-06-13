@@ -1,13 +1,8 @@
 package gui;
 
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
-
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JRadioButtonMenuItem;
 
 final class MenuBuilder {
 
@@ -33,7 +28,7 @@ final class MenuBuilder {
     static JMenu newRadioButtonMenu(String nome, int acc, String itens[],
                                     ItemListener il) {
         JMenu menu = new JMenu(nome); menu.setMnemonic(acc);
-        ButtonGroup bgCB = new ButtonGroup();
+        ButtonGroup bgRB = new ButtonGroup();
         JRadioButtonMenuItem mi;
         for (int i=0; i<itens.length; i+=3) {
             if (itens[i]!=null) {
@@ -41,6 +36,27 @@ final class MenuBuilder {
                     ImageIcon icon = new ImageIcon(imagePrefix + itens[i+1]);
                     mi = new JRadioButtonMenuItem(itens[i], icon, false);
                 } else { mi = new JRadioButtonMenuItem(itens[i]); }
+                if (itens[i+2]!=null) { mi.setMnemonic(itens[i+2].charAt(0)); }
+                mi.addItemListener(il);
+                bgRB.add(mi);
+                menu.add(mi);
+            } else { menu.addSeparator(); }
+        }
+        menu.getItem(0).setSelected(true);
+        return menu;
+    }
+
+    static JMenu newCheckBoxMenu(String nome, int acc, String itens[],
+                                    ItemListener il) {
+        JMenu menu = new JMenu(nome); menu.setMnemonic(acc);
+        ButtonGroup bgCB = new ButtonGroup();
+        JCheckBoxMenuItem mi;
+        for (int i=0; i<itens.length; i+=3) {
+            if (itens[i]!=null) {
+                if (itens[i+1]!=null) {
+                    ImageIcon icon = new ImageIcon(imagePrefix + itens[i+1]);
+                    mi = new JCheckBoxMenuItem(itens[i], icon, false);
+                } else { mi = new JCheckBoxMenuItem(itens[i]); }
                 if (itens[i+2]!=null) { mi.setMnemonic(itens[i+2].charAt(0)); }
                 mi.addItemListener(il);
                 bgCB.add(mi);
