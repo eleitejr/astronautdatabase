@@ -7,7 +7,6 @@
 package gui;
 
 import static dao.ConnectionFactory.getConnection;
-import static javax.swing.UIManager.setLookAndFeel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,6 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -49,6 +49,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -153,7 +154,7 @@ implements ListSelectionListener {
 			"Russia","RUS.png","R",
 			"Siria","SYR.png","y",
 			"Suecia","SWE.png","S",
-			"Suica","CHE.png","√É¬ß",
+			"Suica","CHE.png","√ß",
 			"Ucrania","UKR.png","k",
 			"Vietnam","VNM.png","V",
 	};
@@ -290,18 +291,25 @@ implements ListSelectionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // acao fechar
 		try {
 			//setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-			setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+			//setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+			UIManager.setLookAndFeel(new SyntheticaBlueLightLookAndFeel());
+
 		} catch (UnsupportedLookAndFeelException ex) {
 			ex.printStackTrace();
-		} catch (IllegalAccessException ex) {
-			ex.printStackTrace();
-		} catch (InstantiationException ex) {
-			ex.printStackTrace();
-		} catch (ClassNotFoundException ex) {
-			ex.printStackTrace();
+		}
+		/*catch (IllegalAccessException ex) {
+				ex.printStackTrace();
+			} catch (InstantiationException ex) {
+				ex.printStackTrace();
+			} catch (ClassNotFoundException ex) {
+				ex.printStackTrace();
+			}
+		 */
+		catch (ParseException e) {
+			e.printStackTrace();
 		}
 
-		// setLocationRelativeTo(null);
+		setLocationRelativeTo(null);
 
 		inicializa();
 	}
@@ -315,6 +323,7 @@ implements ListSelectionListener {
 		MenuHandler mh = new MenuHandler();
 		MenuSexoHandler mrh = new MenuSexoHandler();
 		MenuPaisHandler mcbh = new MenuPaisHandler();
+		MenuOrdenarHandler moh = new MenuOrdenarHandler();
 		MenuGrupoHandler mth = new MenuGrupoHandler();
 
 		MenuBuilder.imagePrefix = "./imagens/vetor/";
@@ -336,7 +345,7 @@ implements ListSelectionListener {
 		JMenuItem miNome = new JMenuItem("Parte do Nome");
 		miNome.setIcon(new ImageIcon("./imagens/vetor/document-attribute.png"));
 		miNome.addActionListener(mh);
-		JMenuItem miOrdena = new JMenuItem("Ordena sele√ß√£o por...");
+		JMenuItem miOrdena = new JMenuItem("Ordena seleÁ„o por...");
 		miOrdena.setIcon(new ImageIcon("./imagens/vetor/sort-alphabet.png"));
 		JMenuItem miAtualiza = new JMenuItem("Atualiza");
 		miAtualiza.addActionListener(mh);
@@ -372,7 +381,7 @@ implements ListSelectionListener {
 		JMenu menuGrupo = MenuBuilder.newRadioButtonMenu("Grupo", 'G', sGrupo, mth);
 		menuGrupo.setIcon(new ImageIcon(MenuBuilder.imagePrefix + "block.png"));
 
-		JMenu menuOrdenar = MenuBuilder.newMenu("Ordenar sele√ß√£o por...", 'O', sOrdenar, mh);
+		JMenu menuOrdenar = MenuBuilder.newCheckBoxMenu("Ordenar seleÁ„o por...", 'O', sOrdenar, moh);
 		menuOrdenar.setIcon(new ImageIcon(MenuBuilder.imagePrefix + "sort-alphabet.png"));
 
 		menuFiltrar.add(menuPais);
@@ -406,21 +415,21 @@ implements ListSelectionListener {
 				new JScrollPane(jlistaDeAstronautas)); // diretorio
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		// painel de divisao HORIZONTAL sp2 = Foto / Informa√ß√µes B√°sicas
+		// painel de divisao HORIZONTAL sp2 = Foto / InformaÁıes B·sicas
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		JSplitPane sp2 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,// painel de divisao interno
 				lbl_foto = new JLabel(), // janela com a Foto do astronauta
 				new JScrollPane(taInfo = new JTextArea())); // area de texto
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		// painel de divisao HORIZONTAL sp3 = sp2 / Painel de Miss√µes
+		// painel de divisao HORIZONTAL sp3 = sp2 / Painel de Missıes
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		JSplitPane sp3 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
 				sp2,
 				painel_Missoes);
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		// painel de divisao VERTICAL sp4 = sp3 / Informa√ß√µes de Biografia
+		// painel de divisao VERTICAL sp4 = sp3 / InformaÁıes de Biografia
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		JSplitPane sp4 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
 				sp3,
@@ -816,7 +825,7 @@ implements ListSelectionListener {
 					dao.salva(astronauta);
 				}	catch (SQLException evt){
 					JOptionPane.showMessageDialog(null,
-							"N√É¬£o foi possivel estabelecer conexao remota...",
+							"Nao foi possivel estabelecer conexao remota...",
 							"Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon("./imagens/vetor/scary.png") );
 				}
 
@@ -900,7 +909,7 @@ implements ListSelectionListener {
 			if (acao.equals("Atualiza")){
 				System.out.println("atualizando ----------------------------------------->");
 				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-				System.out.println("Operac√£o realizada com sucesso-------> " + getListaDeAstronautas().getModel().getSize() + " registros encontrados.");
+				System.out.println("Operac„o realizada com sucesso-------> " + getListaDeAstronautas().getModel().getSize() + " registros encontrados.");
 				mostraStatusListaAstro();
 			}
 
@@ -922,54 +931,6 @@ implements ListSelectionListener {
 				//**************************************************************************
 			}
 
-
-
-			// Ordenar por IdAstronauta = ordem de viagem ao espa√É¬ßo
-			if (acao.equals(sOrdenar[0*3])) {
-				//IdAstronautaComparator comparator = new IdAstronautaComparator();
-				setOrdem(acao);
-				Collections.sort(astronautas, OrdenarAstronautas.PorIdAstronauta.asc());
-				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-			}
-
-			// Ordenar por sobrenome
-			if (acao.equals(sOrdenar[1*3])) {
-				//SobrenomeComparator comparator = new SobrenomeComparator();
-				setOrdem(acao);
-				Collections.sort(astronautas, OrdenarAstronautas.PorSobrenome.asc());
-				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-			}
-
-			// Ordenar por data de nascimento
-			if (acao.equals(sOrdenar[2*3])) {
-				//DataNascComparator comparator = new DataNascComparator();
-				setOrdem(acao);
-				Collections.sort(astronautas, OrdenarAstronautas.PorDtNasc.asc());
-				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-			}
-
-			// Ordenar por numero de missoes
-			if (acao.equals(sOrdenar[3*3])) {
-				//MissoesComparator comparator = new MissoesComparator();
-				setOrdem(acao);
-				Collections.sort(astronautas, OrdenarAstronautas.PorNumDeMissoes.desc());
-				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-			}
-
-			// Ordenar por cidade de nascimento
-			if (acao.equals(sOrdenar[4*3])) {
-				//CidadeComparator comparator = new CidadeComparator();
-				setOrdem(acao);
-				Collections.sort(astronautas, OrdenarAstronautas.PorCidade.asc());
-				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
-			}
-
-			// Ordenar por tempo no espa√É¬ßo
-			if (acao.equals(sOrdenar[5*3])) {
-				//TODO: implementar
-				setOrdem(acao);
-				mostraMsgOperNaoImplementada();
-			}
 
 			atualizaStatusBar(statusBar);
 		}
@@ -994,17 +955,7 @@ implements ListSelectionListener {
 							new ImageIcon("./imagens/vetor/Astronaut-50.png"));
 		}
 
-		/**
-		 * @throws HeadlessException
-		 */
-		public void mostraMsgOperNaoImplementada() throws HeadlessException {
-			JOptionPane.showMessageDialog(
-					AstronautaGUInovo.this,
-					"Huh... Nao entendi... Vou ficar te devendo essa...",
-					"Alerta",
-					JOptionPane.INFORMATION_MESSAGE,
-					new ImageIcon("./imagens/vetor/scary.png"));
-		}
+
 
 	}
 
@@ -1019,6 +970,75 @@ implements ListSelectionListener {
 
 				// A expressao abaixo retorna o codigo ISO-3 do pais, a partir do icone armazenado no JMenuItem
 				setStrPais(paisSel.substring(16,19));
+
+				System.out.println("atualizando ----------------------------------------->");
+				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+				mostraFiltros();
+				atualizaStatusBar(statusBar);
+				//mostraStatusListaAstro();
+
+			}
+
+		}
+
+	}
+
+	private class MenuOrdenarHandler implements ItemListener {
+
+
+		@Override
+		public void itemStateChanged(ItemEvent eventoOrdenar) {
+
+			if (eventoOrdenar.getStateChange() == ItemEvent.SELECTED) {
+
+				String acao = ((JMenuItem)eventoOrdenar.getSource()).getText();
+
+				// Ordenar por IdAstronauta = ordem de viagem ao espa√ßo
+				if (acao.equals(sOrdenar[0*3])) {
+					//IdAstronautaComparator comparator = new IdAstronautaComparator();
+					setOrdem(acao);
+					Collections.sort(astronautas, OrdenarAstronautas.PorIdAstronauta.asc());
+					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+				}
+
+				// Ordenar por sobrenome
+				if (acao.equals(sOrdenar[1*3])) {
+					//SobrenomeComparator comparator = new SobrenomeComparator();
+					setOrdem(acao);
+					Collections.sort(astronautas, OrdenarAstronautas.PorSobrenome.asc());
+					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+				}
+
+				// Ordenar por data de nascimento
+				if (acao.equals(sOrdenar[2*3])) {
+					//DataNascComparator comparator = new DataNascComparator();
+					setOrdem(acao);
+					Collections.sort(astronautas, OrdenarAstronautas.PorDtNasc.asc());
+					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+				}
+
+				// Ordenar por numero de missoes
+				if (acao.equals(sOrdenar[3*3])) {
+					//MissoesComparator comparator = new MissoesComparator();
+					setOrdem(acao);
+					Collections.sort(astronautas, OrdenarAstronautas.PorNumDeMissoes.desc());
+					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+				}
+
+				// Ordenar por cidade de nascimento
+				if (acao.equals(sOrdenar[4*3])) {
+					//CidadeComparator comparator = new CidadeComparator();
+					setOrdem(acao);
+					Collections.sort(astronautas, OrdenarAstronautas.PorCidade.asc());
+					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
+				}
+
+				// Ordenar por tempo no espa√ßo
+				if (acao.equals(sOrdenar[5*3])) {
+					//TODO: implementar
+					setOrdem(acao);
+					mostraMsgOperNaoImplementada();
+				}
 
 				System.out.println("atualizando ----------------------------------------->");
 				jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
@@ -1103,6 +1123,18 @@ implements ListSelectionListener {
 		;
 	}
 
+	/**
+	 * @throws HeadlessException
+	 */
+	public void mostraMsgOperNaoImplementada() throws HeadlessException {
+		JOptionPane.showMessageDialog(
+				AstronautaGUInovo.this,
+				"Huh... Nao entendi... Vou ficar te devendo essa...",
+				"Alerta",
+				JOptionPane.INFORMATION_MESSAGE,
+				new ImageIcon("./imagens/vetor/scary.png"));
+	}
+
 	/***************************************************
 	 *           INICIALIZACAO DOS COMPONENTES
 	 ***************************************************/
@@ -1157,7 +1189,7 @@ implements ListSelectionListener {
 			} catch (SQLException e) {
 				JOptionPane.showMessageDialog(
 						null,
-						"Erro de Conex√£o!",
+						"Erro de Conex„o!",
 						"Alerta",
 						JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
