@@ -175,9 +175,9 @@ implements ListSelectionListener {
 			" Ordem de Viagem","shuttle.png","V",
 			" Sobrenome","address-book.png","n",
 			" Data de Nascimento","calendar-day.png","D",
-			" Numero de Missoes","counter.png", "M",
+			" Numero de Missões","counter.png", "M",
 			" Cidade de Nascimento","building-hedge.png","C",
-			" Tempo no Espaco","alarm-clock.png","c",
+			" Tempo no Espaço","alarm-clock.png","c",
 			null,null,null,
 			" Inverter Ordem","arrow-return-090.png","I"
 	};
