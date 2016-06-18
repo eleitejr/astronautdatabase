@@ -58,7 +58,6 @@ import javax.swing.event.ListSelectionListener;
 import crud.AstronautaCreate;
 import dao.AstronautaDAO;
 import de.javasoft.plaf.synthetica.SyntheticaPlainLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import modelo.Astronauta;
 import modelo.JListaDeAstronautas;
 import modelo.JListaDePaises;
@@ -121,7 +120,7 @@ implements ListSelectionListener {
 			"Remover registro", "database-delete.png","e",
 			null, null, null,
 			"Preparar Imagens", "shuttle.png","I",
-			"Testa Funcoes Especiais", "yin-yang.png", "i"};
+			"Testa Funções Especiais", "yin-yang.png", "i"};
 
 	private static final String[] sPais = {
 			"Todos","ALL.png","T",
@@ -296,7 +295,7 @@ implements ListSelectionListener {
 		try {
 			//setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 			//setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-			UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
+			//UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
 			UIManager.setLookAndFeel(new SyntheticaPlainLookAndFeel());
 
 		} catch (UnsupportedLookAndFeelException ex) {
@@ -342,7 +341,7 @@ implements ListSelectionListener {
 		 ******************************************************************************************/
 
 		JMenu menuFiltrar = new JMenu("Filtrar");
-		JMenuItem miMissao = new JMenuItem("Missao");
+		JMenuItem miMissao = new JMenuItem("Missão");
 		miMissao.setIcon(new ImageIcon("./imagens/vetor/shuttle.png"));
 		miMissao.addActionListener(mh);
 		JMenuItem miDataNasc = new JMenuItem("Data de Nascimento");
