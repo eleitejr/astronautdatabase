@@ -57,6 +57,7 @@ import javax.swing.event.ListSelectionListener;
 
 import crud.AstronautaCreate;
 import dao.AstronautaDAO;
+import de.javasoft.plaf.synthetica.SyntheticaPlainLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import modelo.Astronauta;
 import modelo.JListaDeAstronautas;
@@ -295,6 +296,7 @@ implements ListSelectionListener {
 			//setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 			//setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			UIManager.setLookAndFeel(new SyntheticaSkyMetallicLookAndFeel());
+			UIManager.setLookAndFeel(new SyntheticaPlainLookAndFeel());
 
 		} catch (UnsupportedLookAndFeelException ex) {
 			ex.printStackTrace();

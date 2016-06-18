@@ -5,4 +5,13 @@
 	<lib name="mysql-connector-java-5.1.35-bin.jar" scope="COMPILE">
 		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.35-bin.jar!/"/>
 	</lib>
+	<lib name="synthetica.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/synthetica.jar!/"/>
+	</lib>
+	<lib name="syntheticaSkyMetallic.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/syntheticaSkyMetallic.jar!/"/>
+	</lib>
+	<levels>
+		<level name="syntheticaPlain" value="project"/>
+	</levels>
 </component>
