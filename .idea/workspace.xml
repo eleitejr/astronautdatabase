@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c010272-78bb-4670-ae00-78c86be3e988" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/astronautdatabase.jar" afterPath="$PROJECT_DIR$/astronautdatabase.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/AstronautaGUInovo.java" afterPath="$PROJECT_DIR$/src/gui/AstronautaGUInovo.java" />
     </list>
@@ -53,8 +52,8 @@
       <file leaf-file-name="AstronautaGUInovo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUInovo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
+            <state relative-caret-position="512">
+              <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -760,7 +759,7 @@
       <workItem from="1464610092737" duration="29000" />
       <workItem from="1464657413358" duration="6032000" />
       <workItem from="1464691515418" duration="2357000" />
-      <workItem from="1466258307534" duration="527000" />
+      <workItem from="1466258307534" duration="978000" />
     </task>
     <task id="LOCAL-00001" summary="Update home 30/05/2016 22:18">
       <created>1464663336676</created>
@@ -783,11 +782,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466258637207</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update home 30/05/2016 22:18">
+      <created>1466258840014</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1466258840014</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16094000" />
+    <option name="totallyTimeSpent" value="16545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="80" width="1855" height="1028" extended-state="0" />
@@ -1108,8 +1114,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUInovo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
+        <state relative-caret-position="512">
+          <caret line="160" column="17" selection-start-line="160" selection-start-column="17" selection-end-line="160" selection-end-column="17" />
           <folding />
         </state>
       </provider>
