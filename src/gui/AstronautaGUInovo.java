@@ -946,7 +946,7 @@ implements ListSelectionListener {
 		public void mostraMsgSobre() throws HeadlessException {
 			JOptionPane.showMessageDialog(
 					AstronautaGUInovo.this,
-					"(C)2015-2016 The Astronaut Database \n " + "http://www.astronautdatabase.com\n\n" +
+					"\u00A9 2015-2016 The Astronaut Database \n " + "http://www.astronautdatabase.com\n\n" +
 							"Contact:\t Erasmo Leite Jr \n" +
 							"\t erasmo@astronautdatabase.com \n\n" +
 							"Thanks to:\n" +

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c010272-78bb-4670-ae00-78c86be3e988" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imagens/insignia/small/Soyuz TMA-01M.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/astronautdatabase.jar" afterPath="$PROJECT_DIR$/astronautdatabase.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/AstronautaGUInovo.java" afterPath="$PROJECT_DIR$/src/gui/AstronautaGUInovo.java" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="AstronautaGUInovo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUInovo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="179" column="28" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+            <state relative-caret-position="242">
+              <caret line="948" column="23" selection-start-line="948" selection-start-column="23" selection-end-line="948" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -801,7 +800,7 @@
       <workItem from="1464610092737" duration="29000" />
       <workItem from="1464657413358" duration="6032000" />
       <workItem from="1464691515418" duration="2357000" />
-      <workItem from="1466258307534" duration="1841000" />
+      <workItem from="1466258307534" duration="2173000" />
     </task>
     <task id="LOCAL-00001" summary="Update home 30/05/2016 22:18">
       <created>1464663336676</created>
@@ -838,11 +837,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466259290150</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update home 30/05/2016 22:18">
+      <created>1466260152716</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1466260152716</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17408000" />
+    <option name="totallyTimeSpent" value="17740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="80" width="1855" height="1028" extended-state="0" />
@@ -860,7 +866,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16280323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16280323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938007" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1176,8 +1182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUInovo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="179" column="28" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+        <state relative-caret-position="242">
+          <caret line="948" column="23" selection-start-line="948" selection-start-column="23" selection-end-line="948" selection-end-column="23" />
           <folding />
         </state>
       </provider>
