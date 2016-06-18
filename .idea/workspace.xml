@@ -2,89 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c010272-78bb-4670-ae00-78c86be3e988" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntheticaPlain.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/syntheticaPlain.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/astronautdatabase.jar" afterPath="$PROJECT_DIR$/astronautdatabase.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$1.class" afterPath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$Task.class" afterPath="$PROJECT_DIR$/bin/components/ProgressBarDemo2$Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/components/ProgressBarDemo2.class" afterPath="$PROJECT_DIR$/bin/components/ProgressBarDemo2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaCreate$1.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaCreate$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaCreate$2.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaCreate$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaCreate.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaCreate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaEdit$1.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaEdit$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaEdit$2.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaEdit$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaEdit.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaEdit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaUpdate$1.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaUpdate$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaUpdate$2.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaUpdate$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/AstronautaUpdate.class" afterPath="$PROJECT_DIR$/bin/crud/AstronautaUpdate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/crud/ListaAstronauta.class" afterPath="$PROJECT_DIR$/bin/crud/ListaAstronauta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dao/AstronautaDAO.class" afterPath="$PROJECT_DIR$/bin/dao/AstronautaDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dao/ConnectionFactory.class" afterPath="$PROJECT_DIR$/bin/dao/ConnectionFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dao/TestaDAOAstronauta.class" afterPath="$PROJECT_DIR$/bin/dao/TestaDAOAstronauta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuGrupoHandler.class" afterPath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuGrupoHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuHandler.class" afterPath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuPaisHandler.class" afterPath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuPaisHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuSexoHandler.class" afterPath="$PROJECT_DIR$/bin/gui/AstronautaGUI$MenuSexoHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/AstronautaGUI.class" afterPath="$PROJECT_DIR$/bin/gui/AstronautaGUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/ListaPaises.class" afterPath="$PROJECT_DIR$/bin/gui/ListaPaises.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/ListaSplit.class" afterPath="$PROJECT_DIR$/bin/gui/ListaSplit.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/MenuBuilder.class" afterPath="$PROJECT_DIR$/bin/gui/MenuBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$1.class" afterPath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$2.class" afterPath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$3.class" afterPath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$4.class" afterPath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$5.class" afterPath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas.class" afterPath="$PROJECT_DIR$/bin/gui/OrdenarAstronautas.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/Painel.class" afterPath="$PROJECT_DIR$/bin/gui/Painel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/gui/framePanels.class" afterPath="$PROJECT_DIR$/bin/gui/framePanels.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Astronauta.class" afterPath="$PROJECT_DIR$/bin/modelo/Astronauta.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/CidadeComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/CidadeComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/DataNascComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/DataNascComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/IdAstronautaComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/IdAstronautaComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/JListaDeAstronautas.class" afterPath="$PROJECT_DIR$/bin/modelo/JListaDeAstronautas.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/JListaDePaises.class" afterPath="$PROJECT_DIR$/bin/modelo/JListaDePaises.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Missao.class" afterPath="$PROJECT_DIR$/bin/modelo/Missao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/MissoesComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/MissoesComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Pais.class" afterPath="$PROJECT_DIR$/bin/modelo/Pais.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/Programa.class" afterPath="$PROJECT_DIR$/bin/modelo/Programa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/modelo/SobrenomeComparator.class" afterPath="$PROJECT_DIR$/bin/modelo/SobrenomeComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso$1.class" afterPath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso.class" afterPath="$PROJECT_DIR$/bin/swingHelper/BarraDeProgresso.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/StatusBar.class" afterPath="$PROJECT_DIR$/bin/swingHelper/StatusBar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/swingHelper/SwingHelper.class" afterPath="$PROJECT_DIR$/bin/swingHelper/SwingHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/teste/testaFuncaoIsAlive.class" afterPath="$PROJECT_DIR$/bin/teste/testaFuncaoIsAlive.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener$1.class" afterPath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener.class" afterPath="$PROJECT_DIR$/bin/utility/ActivatedHyperlinkListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser$1.class" afterPath="$PROJECT_DIR$/bin/utility/Browser$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser$BrowserListener.class" afterPath="$PROJECT_DIR$/bin/utility/Browser$BrowserListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser$BrowserLoader.class" afterPath="$PROJECT_DIR$/bin/utility/Browser$BrowserLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/Browser.class" afterPath="$PROJECT_DIR$/bin/utility/Browser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/EditorPaneSample.class" afterPath="$PROJECT_DIR$/bin/utility/EditorPaneSample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/FormatadorDeImagem.class" afterPath="$PROJECT_DIR$/bin/utility/FormatadorDeImagem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink$1.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkMouseListener.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkMouseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkRunner.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink$LinkRunner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/JLabelLink.class" afterPath="$PROJECT_DIR$/bin/utility/JLabelLink.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/MaximumSizeFilter.class" afterPath="$PROJECT_DIR$/bin/utility/MaximumSizeFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/MemComboAgent.class" afterPath="$PROJECT_DIR$/bin/utility/MemComboAgent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/MemComboBox.class" afterPath="$PROJECT_DIR$/bin/utility/MemComboBox.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/StringFormat.class" afterPath="$PROJECT_DIR$/bin/utility/StringFormat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/META-INF/ECLIPSE_.SF" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/META-INF/ECLIPSE_.SF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/plugin.properties" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/plugin.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/plugin.xml" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AstronautDatabase.eml" afterPath="$PROJECT_DIR$/AstronautDatabase.eml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fontes/Font License.txt.txt" afterPath="$PROJECT_DIR$/fontes/Font License.txt.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fontes/manifest.mf" afterPath="$PROJECT_DIR$/fontes/manifest.mf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/AstronautaGUInovo.java" afterPath="$PROJECT_DIR$/src/gui/AstronautaGUInovo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MenuBuilder.java" afterPath="$PROJECT_DIR$/src/gui/MenuBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/FormatadorDeImagem.java" afterPath="$PROJECT_DIR$/src/utility/FormatadorDeImagem.java" />
     </list>
     <ignored path="AstronautDatabase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,8 +53,8 @@
       <file leaf-file-name="AstronautaGUInovo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUInovo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="298" column="70" selection-start-line="298" selection-start-column="70" selection-end-line="298" selection-end-column="70" />
+            <state relative-caret-position="362">
+              <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -840,7 +760,7 @@
       <workItem from="1464610092737" duration="29000" />
       <workItem from="1464657413358" duration="6032000" />
       <workItem from="1464691515418" duration="2357000" />
-      <workItem from="1466258307534" duration="315000" />
+      <workItem from="1466258307534" duration="527000" />
     </task>
     <task id="LOCAL-00001" summary="Update home 30/05/2016 22:18">
       <created>1464663336676</created>
@@ -856,11 +776,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464692101637</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update home 30/05/2016 22:18">
+      <created>1466258637207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466258637207</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15882000" />
+    <option name="totallyTimeSpent" value="16094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="80" width="1855" height="1028" extended-state="0" />
@@ -878,7 +805,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16280323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16280323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938007" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -906,6 +833,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Update home 30/05/2016 22:18" />
     <option name="LAST_COMMIT_MESSAGE" value="Update home 30/05/2016 22:18" />
   </component>
@@ -1180,8 +1108,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/AstronautaGUInovo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="298" column="70" selection-start-line="298" selection-start-column="70" selection-end-line="298" selection-end-column="70" />
+        <state relative-caret-position="362">
+          <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
           <folding />
         </state>
       </provider>
