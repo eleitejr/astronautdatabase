@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.8.11.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/syntheticaPlain.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/synthetica.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.35-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/syntheticaSkyMetallic.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/syntheticaBlueLight.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

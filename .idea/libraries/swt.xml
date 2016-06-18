@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="swt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/swt/browser.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/swt/controls.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/swt/examples.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/swt/launcher.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/swt/paint.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/swt/layouts.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

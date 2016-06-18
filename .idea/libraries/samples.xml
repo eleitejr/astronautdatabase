@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="samples">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/propertysheet.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/javaeditor.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/multipageeditor.zip!/" />
+      <root url="jar://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/plugins/org.eclipse.sdk.samples_4.4.0/samples/readmetool.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

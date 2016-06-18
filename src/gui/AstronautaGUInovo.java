@@ -133,7 +133,7 @@ implements ListSelectionListener {
 			"Brasil","BRA.png","B",
 			"Bulgária","BGR.png","i",
 			"Canadá","CAN.png","d",
-			"Casaquistao","KAZ.png","z",
+			"Casaquistão","KAZ.png","z",
 			"China","CHN.png","C",
 			"Coreia do Sul","KOR.png","K",
 			"Cuba","CUB.png","b",
