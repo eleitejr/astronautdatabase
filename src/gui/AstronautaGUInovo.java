@@ -943,6 +943,8 @@ implements ListSelectionListener {
 		 * @throws HeadlessException
 		 */
 		public void mostraMsgSobre() throws HeadlessException {
+
+			/*
 			JOptionPane.showMessageDialog(
 					AstronautaGUInovo.this,
 					"\u00A9 2015-2016 The Astronaut Database \n " + "http://www.astronautdatabase.com\n\n" +
@@ -957,6 +959,15 @@ implements ListSelectionListener {
 							"Viajantes Espaciais",
 							JOptionPane.INFORMATION_MESSAGE,
 							new ImageIcon("./imagens/vetor/Astronaut-50.png"));
+		} */
+
+			try {
+				new CustomAboutDialog();
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 
 
