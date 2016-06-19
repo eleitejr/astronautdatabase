@@ -21,27 +21,25 @@ public class CustomAboutDialog extends JFrame
 	{
 
 		{
-
+			try
 			{
-				try
-				{
-					AboutDialog ad = new AboutDialog(this, false, null, false);
-					ad.setTitle("Viajantes Espaciais");
-					//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-					setSize(320, 240);
-					setLocationRelativeTo(null);        //center
-					setVisible(true);
-					//ad.setBackgroundImage("./imagens/vetor/Astronaut-50.png", new Insets(0, 0, 1, 0));
-					ad.setDescription("<html><b>Sobre Astronaut Database</b><p>Clique nas abas abaixo para obter informações sobre o software e o sistema.</html>");
-					ad.setAboutText(this.getClass().getResource("about.html"));
-					ad.showDialog();
-				}
-				catch (IOException e)
-				{
-					e.printStackTrace();
-				}
+				AboutDialog ad = new AboutDialog(this.getOwner(), false, null, false);
+				ad.setTitle("Viajantes Espaciais");
+				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				//setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				setSize(320, 240);
+				setLocationRelativeTo(null);        //center
+				setVisible(true);
+				//ad.setBackgroundImage("./imagens/vetor/Astronaut-50.png", new Insets(0, 0, 1, 0));
+				ad.setDescription("<html><b>Sobre Astronaut Database</b><p>Clique nas abas abaixo para obter informações sobre o software e o sistema.</html>");
+				ad.setAboutText(this.getClass().getResource("about.html"));
+				ad.showDialog();
 			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+
 		};
 
 
