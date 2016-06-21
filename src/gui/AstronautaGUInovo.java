@@ -113,7 +113,7 @@ implements ListSelectionListener {
 			"Nuvem","database-cloud.png","v",
 			"Rede","database-network.png","R",
 			null, null, null,
-			"Estatisticas","database-property.png","s",
+			"Estatísticas","database-property.png","s",
 			null, null, null,
 			"Editar registro", "database--pencil.png", "d",
 			"Inserir registro","database-insert.png","I",
@@ -847,7 +847,7 @@ implements ListSelectionListener {
 			 *                          FILTROS
 			 ******************************************************************/
 			// Filtro = missao
-			if (acao.equals("Missao")) {
+			if (acao.equals("Missão")) {
 				String mission = ((String) JOptionPane.showInputDialog(
 						AstronautaGUInovo.this,
 						"Digite o nome da missao:",

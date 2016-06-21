@@ -20,37 +20,35 @@ public class CustomAboutDialog extends JFrame
 	public CustomAboutDialog()
 	{
 
+
+		try
 		{
-			try
-			{
-				AboutDialog ad = new AboutDialog(this.getOwner(), false, null, false);
-				ad.setTitle("Viajantes Espaciais");
-				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				//setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-				setSize(320, 240);
-				setLocationRelativeTo(null);        //center
-				setVisible(true);
-				//ad.setBackgroundImage("./imagens/vetor/Astronaut-50.png", new Insets(0, 0, 1, 0));
-				ad.setDescription("<html><b>Sobre Astronaut Database</b><p>Clique nas abas abaixo para obter informações sobre o software e o sistema.</html>");
-				ad.setAboutText(this.getClass().getResource("about.html"));
-				ad.showDialog();
-			}
-			catch (IOException e)
-			{
-				e.printStackTrace();
-			}
+			AboutDialog ad = new AboutDialog(this.getOwner(), false, null, false);
+			ad.setTitle("Viajantes Espaciais");
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			//setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			ad.setSize(320, 240);
+			setLocationRelativeTo(null);        //center
+			ad.setVisible(true);
+			//ad.setBackgroundImage("./imagens/vetor/Astronaut-50.png", new Insets(0, 0, 1, 0));
+			ad.setDescription("<html><b>Sobre Astronaut Database</b><p>Clique nas abas abaixo para obter informações sobre o software e o sistema.</html>");
+			ad.setAboutText(this.getClass().getResource("about.html"));
+			ad.showDialog();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 
-		};
+	};
 
+}
 
+/**
+ * Static main method for application startup. 
+ */
 
-	}
-
-	/**
-	 * Static main method for application startup. 
-	 */
-
-	/*
+/*
 	public static void main(String[] args)
 	{
 		EventQueue.invokeLater(new Runnable()
@@ -70,4 +68,4 @@ public class CustomAboutDialog extends JFrame
 			}
 		});
 	}*/
-}
+
