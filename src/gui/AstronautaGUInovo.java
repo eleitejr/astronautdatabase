@@ -1204,7 +1204,7 @@ implements ListSelectionListener {
 			} catch (SQLException e) {
 				JOptionPane.showMessageDialog(
 						null,
-						"Erro de ConexÃ£o!",
+						"Erro de Conexão!",
 						"Alerta",
 						JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
