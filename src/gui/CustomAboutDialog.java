@@ -31,7 +31,7 @@ public class CustomAboutDialog extends JFrame
 			setLocationRelativeTo(null);        //center
 			ad.setVisible(true);
 			//ad.setBackgroundImage("/imagens/vetor/Astronaut-50.png", new Insets(0, 0, 1, 0));
-			ad.setDescription("<html><b>&copy; 2016 Sobre Viajantes Espaciais</b><p>Clique nas abas abaixo para obter informações sobre o software e o sistema.</html>");
+			ad.setDescription("<html><b>Sobre Viajantes Espaciais</b><p>Clique nas abas abaixo para obter informações sobre o software e o sistema.</html>");
 			ad.setAboutText(this.getClass().getResource("about.html"));
 			ad.showDialog();
 		}

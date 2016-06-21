@@ -1144,7 +1144,7 @@ implements ListSelectionListener {
 	public void mostraMsgOperNaoImplementada() throws HeadlessException {
 		JOptionPane.showMessageDialog(
 				AstronautaGUInovo.this,
-				"Huh... Nao entendi... Vou ficar te devendo essa...",
+				"Huh... Não entendi... Vou ficar te devendo essa...",
 				"Alerta",
 				JOptionPane.INFORMATION_MESSAGE,
 				new ImageIcon("./imagens/vetor/scary.png"));
