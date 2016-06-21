@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Graphics;
+
 import javax.swing.JPanel;
 
 class Painel extends JPanel{

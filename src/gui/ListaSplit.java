@@ -28,10 +28,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import modelo.Astronauta;
-import modelo.Pais;
 import dao.AstronautaDAO;
 import dao.ConnectionFactory;
+import modelo.Astronauta;
+import modelo.Pais;
 
 @SuppressWarnings("serial")
 class ListaSplit extends JFrame implements ListSelectionListener {

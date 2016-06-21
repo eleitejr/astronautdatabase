@@ -1048,7 +1048,7 @@ implements ListSelectionListener {
 					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
 				}
 
-				// Ordenar por tempo no espaÃÂ§o
+				// Ordenar por tempo no espaço
 				if (acao.equals(sOrdenar[5*3])) {
 					//TODO: implementar
 					setOrdem(acao);
@@ -1166,7 +1166,7 @@ implements ListSelectionListener {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(
 					AstronautaGUInovo.this,
-					"Nao foi possivel inicializar o sistema!",
+					"Não foi possível inicializar o sistema!",
 					"Alerta",
 					JOptionPane.ERROR_MESSAGE,
 					new ImageIcon("./imagens/vetor/scary.png"));

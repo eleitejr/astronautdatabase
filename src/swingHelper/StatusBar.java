@@ -1,7 +1,8 @@
 package swingHelper;
 
-import javax.swing.JLabel;
 import java.awt.Dimension;
+
+import javax.swing.JLabel;
 
 /**
  * Created by erasmo.leite on 19/05/2016.

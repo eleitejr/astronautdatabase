@@ -1,15 +1,17 @@
 package utility;
 
-import modelo.Astronauta;
-import modelo.Pais;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
+import java.awt.Graphics2D;
+import java.awt.HeadlessException;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
+
+import modelo.Astronauta;
+import modelo.Pais;
 
 /**
  * Created by erasmo.leite on 24/05/2016.
