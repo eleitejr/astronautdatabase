@@ -11,7 +11,6 @@ import static dao.ConnectionFactory.getConnection;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GridLayout;
@@ -49,9 +48,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
-import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -61,17 +58,14 @@ import javax.swing.event.ListSelectionListener;
 import crud.AstronautaCreate;
 import dao.AstronautaDAO;
 import de.javasoft.plaf.synthetica.SyntheticaPlainLookAndFeel;
-import modelo.Astronauta;
-import modelo.JListaDeAstronautas;
-import modelo.JListaDePaises;
-import modelo.Pais;
+import modelo.*;
 import swingHelper.StatusBar;
 import utility.FormatadorDeImagem;
 
 @SuppressWarnings("serial")
 public class AstronautaGUInovo
-extends JFrame
-implements ListSelectionListener {
+		extends JFrame
+		implements ListSelectionListener {
 
 	private Connection 						con;
 	private static ArrayList<Astronauta> 	astronautas;
@@ -84,13 +78,11 @@ implements ListSelectionListener {
 	private JLabel                          lbl_bandeira;                               // lbl_bandeira contem a bandeira do pais
 	private JLabel                    		m_sig[];
 
-	private final		JTabbedPane 		mainPane = new JTabbedPane();
+	private final InfoTabs 					infoTabs = new InfoTabs("Biografia", "Curiosidades", "Links");
 
 	private final JPanel                    painel_Missoes = new JPanel(new GridLayout(2,4));                                 // painel de biografia
 
-	private final		JPanel						panel1 = new JPanel(new FlowLayout());
-	private final		JPanel						panel2 = new JPanel(new BorderLayout());
-	private final		JPanel						panel3 = new JPanel(new SpringLayout());
+
 
 	private final File arqFonte = new File ("./fontes/Spaceport.ttf");
 
@@ -344,8 +336,8 @@ implements ListSelectionListener {
 		mb.add(MenuBuilder.newMenu("Ferramentas", 't', sBanco, mh));
 
 		/*****************************************************************************************
-         ITENS DO MENU FILTRAR
-         Seleciona astronauta com base em filtros: nome, pais, missao, data de nascimento.
+		 ITENS DO MENU FILTRAR
+		 Seleciona astronauta com base em filtros: nome, pais, missao, data de nascimento.
 		 ******************************************************************************************/
 
 		JMenu menuFiltrar = new JMenu("Filtrar");
@@ -364,8 +356,8 @@ implements ListSelectionListener {
 		miAtualiza.setIcon(new ImageIcon("./imagens/vetor/arrow-circle.png"));
 
 		/*****************************************************************************************
-         ITENS DO MENU FILTRAR (sexo)
-         Seleciona astronauta com base em filtros: sexo masculino (M), feminino (F) ou ambos (ALL)
+		 ITENS DO MENU FILTRAR (sexo)
+		 Seleciona astronauta com base em filtros: sexo masculino (M), feminino (F) ou ambos (ALL)
 		 ******************************************************************************************/
 
 		JMenu menuSexo = new JMenu("Sexo");
@@ -441,15 +433,13 @@ implements ListSelectionListener {
 				painel_Missoes);
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		// painel de divisao VERTICAL sp4 = sp3 / mainPane
+		// painel de divisao VERTICAL sp4 = sp3 / infoTabs
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		taInfoBio = new JTextArea();
-		mainPane.addTab("Biografia", taInfoBio);
-		mainPane.addTab("Curiosidades", panel2);
-		mainPane.addTab("Links", panel3);
+		infoTabs.getPanel1().add(taInfoBio);
 		JSplitPane sp4 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
 				sp3,
-				mainPane); // area de texto
+				infoTabs); // area de texto
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		// painel de divisao HORIZONTAL sp5 = sp1 / sp4
@@ -481,8 +471,8 @@ implements ListSelectionListener {
 		sp5.setDividerLocation(200);
 
 		/*****************************************************************************************
-         PAINEIS COM INFORMACOES SOBRE O VIAJANTE
-         Apresenta as informacoes do astronauta selecionado.
+		 PAINEIS COM INFORMACOES SOBRE O VIAJANTE
+		 Apresenta as informacoes do astronauta selecionado.
 		 ******************************************************************************************/
 
 		taInfo.setEditable(false);
@@ -533,10 +523,10 @@ implements ListSelectionListener {
 	}
 
 	/*****************************************************************************************
-                            IMPORTACAO DO BANCO DE DADOS MySQL
+	 IMPORTACAO DO BANCO DE DADOS MySQL
 
-     Cria um  objeto de acesso a banco de dados (DAO) para carregar as listas de paises e
-     astronautas.
+	 Cria um  objeto de acesso a banco de dados (DAO) para carregar as listas de paises e
+	 astronautas.
 
 	 ******************************************************************************************/
 	/**
@@ -592,7 +582,7 @@ implements ListSelectionListener {
 
 	/********************************************
 
-    		classe implementa LISTENER
+	 classe implementa LISTENER
 
 	 *********************************************/
 
@@ -612,8 +602,8 @@ implements ListSelectionListener {
 		}
 
 		/*****************************************************************************************
-         AREA DE TEXTO COM INFO DO ASTRONAUTA
-         Exibe informacoes do astronauta: ID, nome, pais de origem, data de nascimento, sexo.
+		 AREA DE TEXTO COM INFO DO ASTRONAUTA
+		 Exibe informacoes do astronauta: ID, nome, pais de origem, data de nascimento, sexo.
 		 ******************************************************************************************/
 
 		StringBuilder sb = new StringBuilder("REGISTRO: \t" + selecionado.getIdAstronauta() + "\n");
@@ -672,7 +662,7 @@ implements ListSelectionListener {
 				m_sig[m].setIcon((new ImageIcon("./imagens/insignia/small/" + missoes.get(m).trim() + ".png")));
 
 			}
-			finally{			
+			finally{
 
 				//m_sig[m].setIcon(new ImageIcon("./imagens/insignia/empty.png"));
 
@@ -752,7 +742,7 @@ implements ListSelectionListener {
 
 	 */
 	/***************************************
-          ATUALIZACAO DA BARRA DE STATUS
+	 ATUALIZACAO DA BARRA DE STATUS
 	 ***************************************/
 	private void atualizaStatusBar(StatusBar sbar) {
 		sbar.setMessage(getStatus());
@@ -764,13 +754,13 @@ implements ListSelectionListener {
 		int n_registros = getListaDeAstronautas().getModel().getSize();
 
 		return "SERVIDOR: \t" + servidor + "  REGISTROS: \t" + n_registros + " encontrados." +
-		"  FILTROS: \t" + "[pais = " + getStrPais() + "] [sexo = " + getStrSexo() + "] [grupo = " + getStrGrupo() + "]" +
-		"  ORDEM: \t" + Ordem.substring(1);
+				"  FILTROS: \t" + "[pais = " + getStrPais() + "] [sexo = " + getStrSexo() + "] [grupo = " + getStrGrupo() + "]" +
+				"  ORDEM: \t" + Ordem.substring(1);
 
 	}
 
 	/*****************
-    @class MenuHandler
+	 @class MenuHandler
 	 *****************/
 	public class MenuHandler implements ActionListener {
 
@@ -906,10 +896,10 @@ implements ListSelectionListener {
 					astronautas.stream().filter(astronauta -> astronauta.getPrimeiro_Nome().toLowerCase()
 							.contains(parteDoNome)
 							|| (astronauta.getNome_do_Meio()
-									.toLowerCase()
-									.contains(parteDoNome) || (astronauta
-											.getSobrenome().toLowerCase()
-											.contains(parteDoNome)))).forEach(modelAstroConsulta::addElement);
+							.toLowerCase()
+							.contains(parteDoNome) || (astronauta
+							.getSobrenome().toLowerCase()
+							.contains(parteDoNome)))).forEach(modelAstroConsulta::addElement);
 					jlistaDeAstronautas.setModel(modelAstroConsulta);
 					jlistaDeAstronautas.setSelectedIndex(0);
 					jlistaDeAstronautas.ensureIndexIsVisible(0);
@@ -1092,9 +1082,9 @@ implements ListSelectionListener {
 
 				switch(sexoSel) {
 
-				case "Ambos" : default	:	{setStrSexo("ALL"); 	break;}
-				case "Homens" 			:	{setStrSexo("M");	 	break;}
-				case "Mulheres" 		:	{setStrSexo("F");	 	break;}
+					case "Ambos" : default	:	{setStrSexo("ALL"); 	break;}
+					case "Homens" 			:	{setStrSexo("M");	 	break;}
+					case "Mulheres" 		:	{setStrSexo("F");	 	break;}
 				}
 
 				System.out.println("atualizando ----------------------------------------->");
