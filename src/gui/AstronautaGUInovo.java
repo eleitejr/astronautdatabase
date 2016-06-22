@@ -11,6 +11,7 @@ import static dao.ConnectionFactory.getConnection;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GridLayout;
@@ -48,7 +49,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
+import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -81,8 +84,13 @@ implements ListSelectionListener {
 	private JLabel                          lbl_bandeira;                               // lbl_bandeira contem a bandeira do pais
 	private JLabel                    		m_sig[];
 
+	private final		JTabbedPane 		mainPane = new JTabbedPane();
 
 	private final JPanel                    painel_Missoes = new JPanel(new GridLayout(2,4));                                 // painel de biografia
+
+	private final		JPanel						panel1 = new JPanel(new FlowLayout());
+	private final		JPanel						panel2 = new JPanel(new BorderLayout());
+	private final		JPanel						panel3 = new JPanel(new SpringLayout());
 
 	private final File arqFonte = new File ("./fontes/Spaceport.ttf");
 
@@ -433,11 +441,15 @@ implements ListSelectionListener {
 				painel_Missoes);
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		// painel de divisao VERTICAL sp4 = sp3 / InformaÃ§Ãµes de Biografia
+		// painel de divisao VERTICAL sp4 = sp3 / mainPane
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		taInfoBio = new JTextArea();
+		mainPane.addTab("Biografia", taInfoBio);
+		mainPane.addTab("Curiosidades", panel2);
+		mainPane.addTab("Links", panel3);
 		JSplitPane sp4 = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
 				sp3,
-				new JScrollPane(taInfoBio = new JTextArea())); // area de texto
+				mainPane); // area de texto
 
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		// painel de divisao HORIZONTAL sp5 = sp1 / sp4
@@ -445,6 +457,7 @@ implements ListSelectionListener {
 		JSplitPane sp5 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
 				sp1,
 				sp4);
+
 
 		getContentPane().add(sp5, "Center"); // adiciona a janela
 
@@ -632,7 +645,7 @@ implements ListSelectionListener {
 
 		sb.append("SEXO: \t").append(selecionado.getSexo().charAt(0) == 'M' ? "masculino" : "feminino").append("\n\n");
 
-		StringBuilder sb2 = new StringBuilder("BIOGRAFIA: " + "\n\n" + selecionado.getInfo() + "\n\n");
+		StringBuilder sb2 = new StringBuilder(selecionado.getInfo() + "\n\n");
 		sb2.append("MISSOES: " + "\n\n");
 		for (String s : selecionado.getMissao()) {
 			sb2.append(s).append("\n");
@@ -1048,7 +1061,7 @@ implements ListSelectionListener {
 					jlistaDeAstronautas.filtra(getAstronautas(), getStrSexo(), getStrPais(), getStrGrupo());
 				}
 
-				// Ordenar por tempo no espaÃÂ§o
+				// Ordenar por tempo no espaço
 				if (acao.equals(sOrdenar[5*3])) {
 					//TODO: implementar
 					setOrdem(acao);
@@ -1144,7 +1157,7 @@ implements ListSelectionListener {
 	public void mostraMsgOperNaoImplementada() throws HeadlessException {
 		JOptionPane.showMessageDialog(
 				AstronautaGUInovo.this,
-				"Huh... Nao entendi... Vou ficar te devendo essa...",
+				"Huh... Não entendi... Vou ficar te devendo essa...",
 				"Alerta",
 				JOptionPane.INFORMATION_MESSAGE,
 				new ImageIcon("./imagens/vetor/scary.png"));
@@ -1166,7 +1179,7 @@ implements ListSelectionListener {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(
 					AstronautaGUInovo.this,
-					"Nao foi possivel inicializar o sistema!",
+					"Não foi possível inicializar o sistema!",
 					"Alerta",
 					JOptionPane.ERROR_MESSAGE,
 					new ImageIcon("./imagens/vetor/scary.png"));
@@ -1204,7 +1217,7 @@ implements ListSelectionListener {
 			} catch (SQLException e) {
 				JOptionPane.showMessageDialog(
 						null,
-						"Erro de ConexÃ£o!",
+						"Erro de Conexão!",
 						"Alerta",
 						JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
