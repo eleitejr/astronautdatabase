@@ -15,7 +15,7 @@ public class ConnectionFactory {
         try {
             // TENTA CONEXÃO COM BANCO DE DADOS REMOTO
             Connection RemoteConnection;
-            RemoteConnection = DriverManager.getConnection("jdbc:mysql://xmysql.astronautdatabase.com:3306/astronautdatabase", "astronautdataba", "Juliana11@");
+            RemoteConnection = DriverManager.getConnection("jdbc:mysql://xmysql.erasmoleite.com:3306/erasmoleite", "erasmoleite", "Juliana11@");
             return RemoteConnection;
 
         } catch (Exception e) {
